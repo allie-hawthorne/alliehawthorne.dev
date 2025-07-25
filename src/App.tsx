@@ -14,7 +14,6 @@ export enum Screen {
   Splash = 'Splash',
   About = 'About',
   Projects = 'Projects',
-  Contact = 'Contact',
 }
 
 const screensComponentMap = {
