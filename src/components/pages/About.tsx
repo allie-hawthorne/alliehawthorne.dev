@@ -1,9 +1,8 @@
-import { AnchorHTMLAttributes } from 'react';
 import { ContentWrapper } from './ContentWrapper';
 import { NowPlaying } from '../NowPlaying';
 import { useBreakpoints } from '../../utils/breakpointUtils';
 
-interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface LinkProps extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
   children: React.ReactNode
 }
 export const NewTabLink = ({ href, className, children, ...rest }: LinkProps) => (
