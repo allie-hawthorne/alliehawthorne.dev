@@ -1,25 +1,11 @@
 import { useState } from 'react';
 import { CustomBackground } from './components/CustomBackground';
-import { SplashScreen } from './components/SplashScreen';
 import { LinksBar } from './components/LinksBar';
 import { PageWrapper } from './components/PageWrapper';
-import { About } from './components/pages/About';
-import { Projects } from './components/pages/Projects';
 import { usePageContext } from './backgrounds/PageContext';
+import { Screen, screensComponentMap } from './utils/screen';
 
 export const defaultTransition = 'transition-all duration-500';
-
-export enum Screen {
-  Splash = 'Splash',
-  About = 'About',
-  Projects = 'Projects',
-}
-
-const screensComponentMap = {
-  [Screen.Splash]: <SplashScreen />,
-  [Screen.About]: <About />,
-  [Screen.Projects]: <Projects />,
-}
 
 export default function() {
   const [screen, setScreen] = useState<Screen>(Screen.Splash);
