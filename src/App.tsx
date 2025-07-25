@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { CustomBackground } from './components/CustomBackground';
 import { LinksBar } from './components/LinksBar';
 import { PageWrapper } from './components/PageWrapper';
@@ -8,8 +7,7 @@ import { Screen, screensComponentMap } from './utils/screen';
 export const defaultTransition = 'transition-all duration-500';
 
 export default function() {
-  const [screen, setScreen] = useState<Screen>(Screen.Splash);
-  const {zenMode} = usePageContext()
+  const {zenMode, screen} = usePageContext()
 
   return (
     <div className='select-none bg-black text-pink-300 font-serif h-[100dvh] flex items-center justify-center flex-col'>
@@ -22,7 +20,7 @@ export default function() {
             </PageWrapper>
           ))}
         </div>
-        <LinksBar screen={screen} setScreen={setScreen} />
+        <LinksBar />
       </div>}
     </div>
   );

@@ -1,14 +1,11 @@
-import { Dispatch, SetStateAction } from 'react'
+import { usePageContext } from '../backgrounds/PageContext'
 import { defaultTransition } from '../App'
 import { Screen } from '../utils/screen'
 import { pinks } from './ShuffleButton'
 
-interface LinksBarProps {
-  screen: Screen
-  setScreen: Dispatch<SetStateAction<Screen>>
-}
+export const LinksBar = () => {
+  const {screen, setScreen} = usePageContext()
 
-export const LinksBar = ({screen, setScreen}: LinksBarProps) => {
   const screensMap = {
     about: Screen.About,
     projects: Screen.Projects,
