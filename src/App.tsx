@@ -5,7 +5,6 @@ import { LinksBar } from './components/LinksBar';
 import { PageWrapper } from './components/PageWrapper';
 import { About } from './components/pages/About';
 import { Projects } from './components/pages/Projects';
-import { FloatingIcons } from './components/FloatingIcons';
 import { useBackgroundContext } from './backgrounds/BackgroundContext';
 
 export const defaultTransition = 'transition-all duration-500';
@@ -39,7 +38,6 @@ export default function() {
         </div>
         <LinksBar screen={screen} setScreen={setScreen} />
       </div>}
-        <FloatingIcons />
     </div>
   );
 }

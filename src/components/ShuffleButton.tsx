@@ -22,7 +22,7 @@ export const ShuffleButton = () => {
           backgroundColor: isDown ? pinks[1] : pinks[0],
           translate: isDown ? '0 1px' : '0 0'
         }}
-        className={`${defaultTransition} ${glowing} h-20 w-20 bg-pink-300 rounded-full flex items-center justify-center text-black transition-all duration-75 cursor-pointer` }
+        className={`${defaultTransition} ${glowing} absolute top-20 h-20 w-20 bg-pink-300 rounded-full flex items-center justify-center text-black transition-all duration-75 cursor-pointer` }
         onClick={() => {
           setBackgroundIndex(i => (i + 1) % backgroundMap.length)
           setGlowing('');
