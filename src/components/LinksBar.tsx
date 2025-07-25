@@ -11,7 +11,6 @@ export const LinksBar = ({screen, setScreen}: LinksBarProps) => {
   const screensMap = {
     about: Screen.About,
     projects: Screen.Projects,
-    contact: Screen.Contact
   }
 
   return (
