@@ -10,7 +10,7 @@ export const pinks = [
   ];
 
 export const ShuffleButton = () => {
-  const {nextBackground, setScreen} = usePageContext();
+  const {nextBackground, setScreen, setZenMode} = usePageContext();
 
   const [isDown, setIsDown] = useState(false);
   const toggleDown = useCallback(() => setIsDown(p => !p), []);
@@ -25,6 +25,7 @@ export const ShuffleButton = () => {
         className={`${defaultTransition} ${glowing} absolute top-20 h-20 w-20 bg-pink-300 rounded-full flex items-center justify-center text-black transition-all duration-75 cursor-pointer` }
         onClick={() => {
           setScreen(Screen.Zen)
+          setZenMode(true);
           nextBackground();
           setGlowing('');
         }}

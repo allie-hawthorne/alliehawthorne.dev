@@ -4,6 +4,7 @@ import { PlainBlack, PlainPink } from '../backgrounds/Plains';
 import { Tmp } from '../backgrounds/Tmp';
 import { Tmp2 } from '../backgrounds/Tmp2';
 import { TwinCircles } from '../backgrounds/TwinCircles';
+import { Screen } from '../utils/screen';
 
 export const backgroundMap = [
   PlainBlack,
@@ -16,12 +17,12 @@ export const backgroundMap = [
 ]
 
 export const CustomBackground = () => {
-  const {backgroundIndex, zenMode} = usePageContext();
+  const {backgroundIndex, screen} = usePageContext();
 
   const CurrentComponent = backgroundMap[backgroundIndex];
 
   return (
-    <div className="h-full w-full absolute" style={{filter: zenMode ? undefined : 'blur(2px)'}}>
+    <div className="h-full w-full absolute" style={{filter: screen === Screen.Zen ? undefined : 'blur(2px)'}}>
       <CurrentComponent />
     </div>
   );

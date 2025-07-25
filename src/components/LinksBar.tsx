@@ -4,7 +4,9 @@ import { Screen } from '../utils/screen'
 import { pinks } from './ShuffleButton'
 
 export const LinksBar = () => {
-  const {screen, setScreen} = usePageContext()
+  const {screen, setScreen, zenMode} = usePageContext()
+
+  const homeScreen = zenMode ? Screen.Zen : Screen.Splash;
 
   const screensMap = {
     about: Screen.About,
@@ -18,7 +20,7 @@ export const LinksBar = () => {
       {Object.entries(screensMap).map(([name, thisScreen]) => (
         <p
           key={name}
-          onClick={() => setScreen(screen !== thisScreen ? thisScreen : Screen.Splash)}
+          onClick={() => setScreen(screen !== thisScreen ? thisScreen : homeScreen)}
           className={`${defaultTransition} px-2 pt-0.5 pb-5 cursor-pointer`}
           style={{
             backgroundColor: screen === thisScreen ? pinks[0] : undefined,
