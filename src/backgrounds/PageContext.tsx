@@ -6,7 +6,7 @@ interface ContextProps {
   setZenMode: Dispatch<SetStateAction<boolean>>
   zenMode: boolean
 }
-const BackgroundContext = createContext<ContextProps>({
+const PageContext = createContext<ContextProps>({
   backgroundIndex: 0,
   zenMode: false,
   setBackgroundIndex: () => {},
@@ -14,18 +14,18 @@ const BackgroundContext = createContext<ContextProps>({
 });
 
 
-export const BackgroundProvider = ({children}: PropsWithChildren) => {
+export const PageProvider = ({children}: PropsWithChildren) => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const [zenMode, setZenMode] = useState(false);
 
-  return <BackgroundContext.Provider value={{
+  return <PageContext.Provider value={{
     backgroundIndex,
     setBackgroundIndex,
     zenMode,
     setZenMode,
   }}>
     {children}
-  </BackgroundContext.Provider>
+  </PageContext.Provider>
 }
 
-export const useBackgroundContext = () => useContext(BackgroundContext);
+export const usePageContext = () => useContext(PageContext);

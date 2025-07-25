@@ -1,4 +1,4 @@
-import { useBackgroundContext } from '../backgrounds/BackgroundContext';
+import { usePageContext } from '../backgrounds/PageContext';
 import { GameOfLife } from '../backgrounds/GameOfLife';
 import { PlainBlack, PlainPink } from '../backgrounds/Plains';
 import { Tmp } from '../backgrounds/Tmp';
@@ -16,7 +16,7 @@ export const backgroundMap = [
 ]
 
 export const CustomBackground = () => {
-  const {backgroundIndex, zenMode} = useBackgroundContext();
+  const {backgroundIndex, zenMode} = usePageContext();
 
   const CurrentComponent = backgroundMap[backgroundIndex];
 

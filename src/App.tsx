@@ -5,7 +5,7 @@ import { LinksBar } from './components/LinksBar';
 import { PageWrapper } from './components/PageWrapper';
 import { About } from './components/pages/About';
 import { Projects } from './components/pages/Projects';
-import { useBackgroundContext } from './backgrounds/BackgroundContext';
+import { usePageContext } from './backgrounds/PageContext';
 
 export const defaultTransition = 'transition-all duration-500';
 
@@ -23,7 +23,7 @@ const screensComponentMap = {
 
 export default function() {
   const [screen, setScreen] = useState<Screen>(Screen.Splash);
-  const {zenMode} = useBackgroundContext()
+  const {zenMode} = usePageContext()
 
   return (
     <div className='select-none bg-black text-pink-300 font-serif h-[100dvh] flex items-center justify-center flex-col'>

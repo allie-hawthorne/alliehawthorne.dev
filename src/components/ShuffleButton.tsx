@@ -2,7 +2,7 @@ import ShuffleVariantIcon from 'mdi-react/ShuffleVariantIcon';
 import { Dispatch, SetStateAction, useCallback, useState } from 'react';
 import { defaultTransition } from '../App';
 import { backgroundMap } from './CustomBackground';
-import { useBackgroundContext } from '../backgrounds/BackgroundContext';
+import { usePageContext } from '../backgrounds/PageContext';
 
 export const pinks = [
   '#f9a8d5', // Hex version of Tailwind color
@@ -10,7 +10,7 @@ export const pinks = [
   ];
 
 export const ShuffleButton = () => {
-  const {setBackgroundIndex} = useBackgroundContext();
+  const {setBackgroundIndex} = usePageContext();
 
   const [isDown, setIsDown] = useState(false);
   const toggleDown = useCallback(() => setIsDown(p => !p), []);
