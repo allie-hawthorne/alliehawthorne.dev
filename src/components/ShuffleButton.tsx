@@ -1,4 +1,4 @@
-import ShuffleVariantIcon from 'mdi-react/ShuffleVariantIcon';
+import PlayIcon from 'mdi-react/PlayIcon';
 import { useCallback, useState } from 'react';
 import { defaultTransition } from '../App';
 import { usePageContext } from '../backgrounds/PageContext';
@@ -34,7 +34,7 @@ export const ShuffleButton = () => {
         onTouchStart={toggleDown}
         onTouchEnd={toggleDown}
       >
-        <ShuffleVariantIcon size='3em'/>
+        <PlayIcon size='3em'/>
       </div>
   )
 };
