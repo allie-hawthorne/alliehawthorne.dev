@@ -2,6 +2,7 @@ import ShuffleVariantIcon from 'mdi-react/ShuffleVariantIcon';
 import { useCallback, useState } from 'react';
 import { defaultTransition } from '../App';
 import { usePageContext } from '../backgrounds/PageContext';
+import { Screen } from '../utils/screen';
 
 export const pinks = [
   '#f9a8d5', // Hex version of Tailwind color
@@ -9,7 +10,7 @@ export const pinks = [
   ];
 
 export const ShuffleButton = () => {
-  const {nextBackground} = usePageContext();
+  const {nextBackground, setScreen} = usePageContext();
 
   const [isDown, setIsDown] = useState(false);
   const toggleDown = useCallback(() => setIsDown(p => !p), []);
@@ -23,6 +24,7 @@ export const ShuffleButton = () => {
         }}
         className={`${defaultTransition} ${glowing} absolute top-20 h-20 w-20 bg-pink-300 rounded-full flex items-center justify-center text-black transition-all duration-75 cursor-pointer` }
         onClick={() => {
+          setScreen(Screen.Zen)
           nextBackground();
           setGlowing('');
         }}
