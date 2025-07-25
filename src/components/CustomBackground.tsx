@@ -7,8 +7,8 @@ import { TwinCircles } from '../backgrounds/TwinCircles';
 
 export const backgroundMap = [
   PlainBlack,
-  GameOfLife,
   TwinCircles,
+  GameOfLife,
   Tmp,
   Tmp2,
   // If we're gonna use this, we need the text to change dynamically - maybe use context to store index & other data?
