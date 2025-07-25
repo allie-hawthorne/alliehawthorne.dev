@@ -1,7 +1,6 @@
 import ShuffleVariantIcon from 'mdi-react/ShuffleVariantIcon';
-import { Dispatch, SetStateAction, useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { defaultTransition } from '../App';
-import { backgroundMap } from './CustomBackground';
 import { usePageContext } from '../backgrounds/PageContext';
 
 export const pinks = [
@@ -10,7 +9,7 @@ export const pinks = [
   ];
 
 export const ShuffleButton = () => {
-  const {setBackgroundIndex} = usePageContext();
+  const {nextBackground} = usePageContext();
 
   const [isDown, setIsDown] = useState(false);
   const toggleDown = useCallback(() => setIsDown(p => !p), []);
@@ -24,7 +23,7 @@ export const ShuffleButton = () => {
         }}
         className={`${defaultTransition} ${glowing} absolute top-20 h-20 w-20 bg-pink-300 rounded-full flex items-center justify-center text-black transition-all duration-75 cursor-pointer` }
         onClick={() => {
-          setBackgroundIndex(i => (i + 1) % backgroundMap.length)
+          nextBackground();
           setGlowing('');
         }}
         onMouseDown={toggleDown}

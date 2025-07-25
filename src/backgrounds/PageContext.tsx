@@ -1,9 +1,10 @@
 import { Dispatch, PropsWithChildren, SetStateAction, createContext, useContext, useState } from 'react';
+import { backgroundMap } from '../components/CustomBackground';
 import { Screen } from '../utils/screen';
 
 interface ContextProps {
   backgroundIndex: number
-  setBackgroundIndex: Dispatch<SetStateAction<number>>
+  nextBackground: () => void
   zenMode: boolean
   setZenMode: Dispatch<SetStateAction<boolean>>
   screen: Screen
@@ -11,7 +12,7 @@ interface ContextProps {
 }
 const PageContext = createContext<ContextProps>({
   backgroundIndex: 0,
-  setBackgroundIndex: () => {},
+  nextBackground: () => {},
   zenMode: false,
   setZenMode: () => {},
   screen: Screen.Splash,
@@ -24,9 +25,13 @@ export const PageProvider = ({children}: PropsWithChildren) => {
   const [zenMode, setZenMode] = useState(false);
   const [screen, setScreen] = useState<Screen>(Screen.Splash);
 
+  const nextBackground = () => {
+    setBackgroundIndex((prevIndex) => (prevIndex + 1) % backgroundMap.length);
+  };
+
   return <PageContext.Provider value={{
     backgroundIndex,
-    setBackgroundIndex,
+    nextBackground,
     zenMode,
     setZenMode,
     screen,
