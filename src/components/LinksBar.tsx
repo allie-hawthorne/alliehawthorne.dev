@@ -1,7 +1,7 @@
 import { usePageContext } from '../backgrounds/PageContext'
 import { defaultTransition } from '../App'
 import { Screen } from '../utils/screen'
-import { pinks } from './ShuffleButton'
+import { pinks } from './Button'
 
 export const LinksBar = () => {
   const {screen, setScreen, zenMode} = usePageContext()
