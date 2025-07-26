@@ -15,12 +15,12 @@ export default function() {
   };
 
   return (
-    <div className='select-none bg-black text-pink-300 font-serif h-[100dvh] flex items-center justify-center flex-col'>
+    <div style={{backgroundColor: getColDarkCss(1)}} className='select-none text-pink-300 font-serif h-[100dvh] flex items-center justify-center flex-col'>
       <CustomBackground />
       <div style={style} className={`${defaultTransition} z-10 absolute w-full h-full flex items-center justify-center flex-col`}>
         <div className='flex items-center justify-center flex-1'>
           {Object.entries(screensComponentMap).map(([screenName, component]) => (
-            <PageWrapper key={screenName} display={screen === screenName as Screen}>
+            <PageWrapper key={screenName} display={screen === screenName as Screen} className='absolute'>
               {component}
             </PageWrapper>
           ))}

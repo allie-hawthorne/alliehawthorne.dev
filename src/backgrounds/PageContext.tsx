@@ -1,5 +1,5 @@
 import { Dispatch, PropsWithChildren, SetStateAction, createContext, useContext, useEffect, useState } from 'react';
-import { backgroundMap } from '../components/CustomBackground';
+import { backgrounds } from '../components/CustomBackground';
 import { Screen } from '../utils/screen';
 import { removeDatGui } from './shared';
 
@@ -36,14 +36,14 @@ export const PageProvider = ({children}: PropsWithChildren) => {
   const prevBackground = () => {
     setBackgroundIndex(prevIndex => {
       const newIndex = prevIndex - 1;
-      return newIndex < 1 ? backgroundMap.length - 1 : newIndex;
+      return newIndex < 1 ? backgrounds.length - 1 : newIndex;
     });
   };
 
   const nextBackground = () => {
     setBackgroundIndex((prevIndex) => {
       const newIndex = prevIndex + 1;
-      return newIndex >= backgroundMap.length ? 1 : newIndex;
+      return newIndex >= backgrounds.length ? 1 : newIndex;
     });
   };
 

@@ -5,8 +5,9 @@ import { SquareClover } from '../backgrounds/SquareClover';
 import { TwinCircles } from '../backgrounds/TwinCircles';
 import { Screen } from '../utils/screen';
 import { PerlinGrid } from '../backgrounds/PerlinGrid';
+import { PageWrapper } from './PageWrapper';
 
-export const backgroundMap = [
+export const backgrounds = [
   PlainBlack,
   PerlinGrid,
   TwinCircles,
@@ -19,11 +20,13 @@ export const backgroundMap = [
 export const CustomBackground = () => {
   const {backgroundIndex, screen} = usePageContext();
 
-  const CurrentComponent = backgroundMap[backgroundIndex];
-
   return (
-    <div className="h-full w-full absolute" style={{filter: screen === Screen.Zen ? undefined : 'blur(2px)'}}>
-      <CurrentComponent />
+    <div className="h-full w-full absolute overflow-hidden" style={{filter: screen === Screen.Zen ? undefined : 'blur(2px)'}}>
+      {backgrounds.map((Component, index) => (
+        <PageWrapper display={index === backgroundIndex} key={index}>
+          <Component key={index}/>
+        </PageWrapper>
+      ))}
     </div>
   );
 };
