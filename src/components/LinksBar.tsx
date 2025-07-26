@@ -2,6 +2,7 @@ import { usePageContext } from '../backgrounds/PageContext'
 import { defaultTransition } from '../App'
 import { Screen } from '../utils/screen'
 import { pinks } from './Button'
+import { getColDarkCss } from '../backgrounds/shared'
 
 export const LinksBar = () => {
   const {screen, setScreen, zenMode} = usePageContext()
@@ -13,23 +14,27 @@ export const LinksBar = () => {
     projects: Screen.Projects,
   }
 
-  return (
-    <div className='flex justify-around w-full text-xl'>
-      {/* TODO: Sweeping pink boxes when tab is selected */}
-      {/* TODO: Re-evaluate colors - maybe have these white, page headers pink and page content white? */}
-      {Object.entries(screensMap).map(([name, thisScreen]) => (
-        <p
-          key={name}
-          onClick={() => setScreen(screen !== thisScreen ? thisScreen : homeScreen)}
-          className={`${defaultTransition} px-2 pt-0.5 pb-5 cursor-pointer`}
-          style={{
-            backgroundColor: screen === thisScreen ? pinks[0] : undefined,
-            color: screen === thisScreen ? 'black' : undefined
-          }}
-        >
-          {name}
-        </p>
-      ))}
-    </div>
-  )
+  return <div
+    className='flex justify-around w-full text-xl'
+    style={{
+      backgroundColor: getColDarkCss(0.9),
+      boxShadow: `0 0 100px 100px ${getColDarkCss(0.9)}`,
+    }}
+  >
+    {/* TODO: Sweeping pink boxes when tab is selected */}
+    {/* TODO: Re-evaluate colors - maybe have these white, page headers pink and page content white? */}
+    {Object.entries(screensMap).map(([name, thisScreen]) => (
+      <p
+        key={name}
+        onClick={() => setScreen(screen !== thisScreen ? thisScreen : homeScreen)}
+        className={`${defaultTransition} px-2 pt-0.5 pb-5 cursor-pointer`}
+        style={{
+          backgroundColor: screen === thisScreen ? pinks[0] : undefined,
+          color: screen === thisScreen ? 'black' : undefined
+        }}
+      >
+        {name}
+      </p>
+    ))}
+  </div>;
 }
