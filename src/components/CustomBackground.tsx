@@ -4,9 +4,11 @@ import { PlainBlack } from '../backgrounds/Plains';
 import { SquareClover } from '../backgrounds/SquareClover';
 import { TwinCircles } from '../backgrounds/TwinCircles';
 import { Screen } from '../utils/screen';
+import { PerlinGrid } from '../backgrounds/PerlinGrid';
 
 export const backgroundMap = [
   PlainBlack,
+  PerlinGrid,
   TwinCircles,
   GameOfLife,
   SquareClover,
