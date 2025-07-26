@@ -5,6 +5,7 @@ import Sketch from 'react-p5';
 import { usePrevious } from '@uidotdev/usehooks';
 
 const TILE_SIZE = 10;
+const FRAME_RATE = 25;
 
 const EMPTY_PERCENTAGE = 0.8;
 
@@ -70,7 +71,7 @@ export const GameOfLife = () => {
     setParent(canvasParentRef);
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     p5.background(0);
-    p5.frameRate(30);
+    p5.frameRate(FRAME_RATE);
     p5.noStroke();
     p5.pixelDensity(1);
   };
@@ -86,7 +87,5 @@ export const GameOfLife = () => {
     setGameState(isSame ? randomiseGrid() : updateGameState());
   }
 
-  return <div className='blur-sm'>
-    <Sketch setup={setup} draw={draw} windowResized={windowResized}/>
-  </div>;
+  return <Sketch setup={setup} draw={draw} windowResized={windowResized}/>;
 };
