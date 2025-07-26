@@ -11,7 +11,7 @@ export const ShuffleButton = () => {
 
   return <Button
     icon={PlayIcon}
-    className={`${glowing} absolute top-20`}
+    className={glowing}
     onClick={() => {
       setScreen(Screen.Zen)
       setZenMode(true);

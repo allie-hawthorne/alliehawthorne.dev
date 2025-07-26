@@ -11,7 +11,7 @@ export const SplashScreen = () => <div>
       </NewTabLink>
     ))}
   </div>
-  <div className='flex justify-center items-center w-full relative'>
+  <div className='flex justify-center items-center w-full mt-20'>
     <ShuffleButton />
   </div>
 </div>;
