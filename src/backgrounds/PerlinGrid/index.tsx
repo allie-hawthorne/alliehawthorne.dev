@@ -32,10 +32,15 @@ export const PerlinGrid = () => {
 
   const windowResized = (p5: P5) => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+    createGrid(p5);
   };
 
   const draw = (p5: P5) => {
-    p5.background(0);
+    // Make sure we're not using HSL when setting background colour
+    p5.push();
+    p5.colorMode(p5.RGB)
+    p5.background(cols.dark);
+    p5.pop();
     p5.translate(p5.width / 2, p5.height / 2)
 
     const {mouseX, mouseY, unroundedMouseX, unroundedMouseY} = getMouseGridPosition(p5);
