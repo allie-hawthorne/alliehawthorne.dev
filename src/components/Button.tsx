@@ -44,6 +44,6 @@ export const Button = ({icon: Icon, secondary, className, style, ...props}: Butt
     onTouchEnd={toggleDown}
     {...props}
   >
-    <Icon className='p-4' size='100%' />
+    <Icon className='p-[20%]' size='100%' />
   </button>
 }
