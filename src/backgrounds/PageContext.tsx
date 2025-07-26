@@ -5,6 +5,7 @@ import { Screen } from '../utils/screen';
 interface ContextProps {
   backgroundIndex: number
   nextBackground: () => void
+  prevBackground: () => void
   zenMode: boolean
   setZenMode: Dispatch<SetStateAction<boolean>>
   screen: Screen
@@ -14,6 +15,7 @@ interface ContextProps {
 const PageContext = createContext<ContextProps>({
   backgroundIndex: 0,
   nextBackground: () => {},
+  prevBackground: () => {},
   zenMode: false,
   setZenMode: () => {},
   screen: Screen.Splash,
@@ -27,8 +29,18 @@ export const PageProvider = ({children}: PropsWithChildren) => {
   const [zenMode, setZenMode] = useState(false);
   const [screen, setScreen] = useState<Screen>(Screen.Splash);
 
+  const prevBackground = () => {
+    setBackgroundIndex(prevIndex => {
+      const newIndex = prevIndex - 1;
+      return newIndex < 1 ? backgroundMap.length - 1 : newIndex;
+    });
+  };
+
   const nextBackground = () => {
-    setBackgroundIndex((prevIndex) => (prevIndex + 1) % backgroundMap.length);
+    setBackgroundIndex((prevIndex) => {
+      const newIndex = prevIndex + 1;
+      return newIndex >= backgroundMap.length ? 1 : newIndex;
+    });
   };
 
   const leaveZenMode = () => {
@@ -40,6 +52,7 @@ export const PageProvider = ({children}: PropsWithChildren) => {
   return <PageContext.Provider value={{
     backgroundIndex,
     nextBackground,
+    prevBackground,
     zenMode,
     setZenMode,
     screen,
