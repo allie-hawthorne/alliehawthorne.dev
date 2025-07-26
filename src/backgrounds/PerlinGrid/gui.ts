@@ -1,4 +1,5 @@
 import * as dat from 'dat.gui';
+import { removeDatGui } from '../shared';
 
 export const settings = {
   rotation: false,
@@ -10,15 +11,20 @@ export const settings = {
   speedZ: 0.01,
 }
 
-const gui = new dat.GUI();
+export function createDatGui() {
+  // Deals with duplicate created due to safe mode in development
+  removeDatGui();
 
-gui.add(settings, 'mouseStrength', 0, 100).name('Mouse Strength');
-gui.add(settings, 'colourOffset', 0, 360).name('Colour Offset');
+  const gui = new dat.GUI();
 
-const speedFolder = gui.addFolder('Speed');
-speedFolder.add(settings, 'speedX', -0.02, 0.02).name('Speed X');
-speedFolder.add(settings, 'speedY', -0.02, 0.02).name('Speed Y');
-speedFolder.add(settings, 'speedZ', -0.02, 0.02).name('Speed Z');
+  gui.add(settings, 'mouseStrength', 0, 100).name('Mouse Strength');
+  gui.add(settings, 'colourOffset', 0, 360).name('Colour Offset');
 
-gui.add(settings, 'rotation').name('Rotation');
-gui.add(settings, 'squircles').name('Squircles');
+  const speedFolder = gui.addFolder('Speed');
+  speedFolder.add(settings, 'speedX', -0.02, 0.02).name('Speed X');
+  speedFolder.add(settings, 'speedY', -0.02, 0.02).name('Speed Y');
+  speedFolder.add(settings, 'speedZ', -0.02, 0.02).name('Speed Z');
+
+  gui.add(settings, 'rotation').name('Rotation');
+  gui.add(settings, 'squircles').name('Squircles');
+}

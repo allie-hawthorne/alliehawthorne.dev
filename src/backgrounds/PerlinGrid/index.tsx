@@ -2,8 +2,8 @@ import P5 from 'p5';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
 import { cols } from '../shared';
-import { settings } from './gui';
-import { useState } from 'react';
+import { createDatGui, settings } from './gui';
+import { useEffect, useState } from 'react';
 
 const ARRAY_SIZE_MAX = 20;
 
@@ -14,6 +14,8 @@ export const PerlinGrid = () => {
   const [baseBlockSize, setBaseBlockSize] = useState(40);
   const [arraySizeX, setArraySizeX] = useState(ARRAY_SIZE_MAX);
   const [arraySizeY, setArraySizeY] = useState(ARRAY_SIZE_MAX);
+
+  useEffect(createDatGui, []);
 
   const setup = (p5: P5, canvasParentRef: Element) => {
     setParent(canvasParentRef);

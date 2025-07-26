@@ -1,6 +1,7 @@
-import { Dispatch, PropsWithChildren, SetStateAction, createContext, useContext, useState } from 'react';
+import { Dispatch, PropsWithChildren, SetStateAction, createContext, useContext, useEffect, useState } from 'react';
 import { backgroundMap } from '../components/CustomBackground';
 import { Screen } from '../utils/screen';
+import { removeDatGui } from './shared';
 
 interface ContextProps {
   backgroundIndex: number
@@ -28,6 +29,9 @@ export const PageProvider = ({children}: PropsWithChildren) => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const [zenMode, setZenMode] = useState(false);
   const [screen, setScreen] = useState<Screen>(Screen.Splash);
+
+  // Ensures any dat.gui instances are cleaned up when the background changes
+  useEffect(removeDatGui, [backgroundIndex]);
 
   const prevBackground = () => {
     setBackgroundIndex(prevIndex => {
