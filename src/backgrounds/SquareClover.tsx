@@ -11,7 +11,7 @@ const SQUARE_COUNT = Math.PI * 20
 const ROTATION_OFFSET = 0.1
 const ROTATION_SPEED = 1e-3;
 
-export const Tmp2 = () => {
+export const SquareClover = () => {
   const setParent = useP5DupeRemover();
 
   const setup = (p5: p5, canvasParentRef: Element) => {

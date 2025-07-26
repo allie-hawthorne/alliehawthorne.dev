@@ -1,8 +1,7 @@
 import { usePageContext } from '../backgrounds/PageContext';
 import { GameOfLife } from '../backgrounds/GameOfLife';
-import { PlainBlack, PlainPink } from '../backgrounds/Plains';
-import { Tmp } from '../backgrounds/Tmp';
-import { Tmp2 } from '../backgrounds/Tmp2';
+import { PlainBlack } from '../backgrounds/Plains';
+import { SquareClover } from '../backgrounds/SquareClover';
 import { TwinCircles } from '../backgrounds/TwinCircles';
 import { Screen } from '../utils/screen';
 
@@ -10,8 +9,7 @@ export const backgroundMap = [
   PlainBlack,
   TwinCircles,
   GameOfLife,
-  Tmp,
-  Tmp2,
+  SquareClover,
   // If we're gonna use this, we need the text to change dynamically - maybe use context to store index & other data?
   // PastelRainbow,
 ]
