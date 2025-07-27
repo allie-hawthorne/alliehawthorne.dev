@@ -58,7 +58,7 @@ export const Ellipses = () => {
   };
 
   const draw = (p5: P5) => {
-    const circleSize = settings.amplitude/8
+    const circleSize = (3*settings.amplitude)/16
     p5.push();
     p5.colorMode(p5.RGB);
     p5.background(cols.dark, cols.dark, cols.dark, settings.trail ? 2 : 255);
