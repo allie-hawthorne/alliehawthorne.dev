@@ -7,12 +7,14 @@ import { Screen } from '../utils/screen';
 import { PerlinGrid } from '../backgrounds/PerlinGrid';
 import { PageWrapper } from './PageWrapper';
 import { Ellipses } from '../backgrounds/Ellipses';
+import { CirclesAndLines } from '../backgrounds/CirclesAndLines';
 
 export const backgrounds = [
   PlainBlack,
   PerlinGrid,
   Ellipses,
   TwinCircles,
+  CirclesAndLines,
   GameOfLife,
   SquareClover,
   // If we're gonna use this, we need the text to change dynamically - maybe use context to store index & other data?
