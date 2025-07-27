@@ -2,11 +2,10 @@ import P5 from 'p5';
 import Sketch from 'react-p5';
 import * as dat from 'dat.gui';
 import { useP5DupeRemover } from '../utils/p5DupeRemover';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { cols, removeDatGui } from './shared';
 
-const hueAmplitude = 10;
-let spacing = 1.4
+const HUE_AMPLITUDE = 10;
 
 const settings = {
   amplitude: 20,
@@ -32,6 +31,7 @@ export const Ellipses = () => {
   const setParent = useP5DupeRemover();
 
   useEffect(createDatGui, []);
+  const [spacing, setSpacing] = useState(1.4);
 
   const setup = (p5: P5, canvasParentRef: Element) => {
     setParent(canvasParentRef);
@@ -49,7 +49,7 @@ export const Ellipses = () => {
       settings.amplitude = minSize / 20;
       settings.rangeX = 2;
       settings.rangeY = 4;
-      spacing = 1.8;
+      setSpacing(1.8);
     }
   };
 
@@ -81,6 +81,6 @@ export const Ellipses = () => {
 const getCircularPos = (p5: P5, fn: (v: number) => number, extra: number) => fn(p5.millis() * settings.speed * extra) * settings.amplitude;
 
 const calculateHue = (p5: P5, offset: number) => {
-  const time = p5.millis() * settings.speed * hueAmplitude + (offset ?? 0);
+  const time = p5.millis() * settings.speed * HUE_AMPLITUDE + (offset ?? 0);
   return time % 360;
 };
