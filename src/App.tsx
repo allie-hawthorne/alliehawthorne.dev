@@ -10,14 +10,18 @@ export const defaultTransition = 'transition-all duration-500';
 export default function() {
   const {screen, zenMode} = usePageContext()
 
-  const style = {
-    backgroundColor: screen !== Screen.Zen && zenMode ? getColDarkCss(0.8) : undefined,
-  };
+  // TODO: This is dumb, consolidate these
+  const isCanvasBackgrounded = screen !== Screen.Zen && zenMode
+
+  const style = isCanvasBackgrounded ? {
+    backgroundColor: getColDarkCss(0.8),
+    zIndex: 1,
+  } : {};
 
   return (
     <div style={{backgroundColor: getColDarkCss(1)}} className='select-none text-pink-300 font-serif h-[100dvh] flex items-center justify-center flex-col'>
       <CustomBackground />
-      <div style={style} className={`${defaultTransition} z-10 absolute w-full h-full flex items-center justify-center flex-col`}>
+      <div style={style} className={`${defaultTransition} absolute w-full h-full flex items-center justify-center flex-col`}>
         <div className='flex items-center justify-center flex-1'>
           {Object.entries(screensComponentMap).map(([screenName, component]) => (
             <PageWrapper key={screenName} display={screen === screenName as Screen} className='absolute'>
