@@ -21,8 +21,8 @@ function createDatGui() {
 
   const gui = new dat.GUI();
   gui.add(settings, 'amplitude', 10, 30);
-  gui.add(settings, 'rangeX', 0, 30);
-  gui.add(settings, 'rangeY', 0, 12);
+  gui.add(settings, 'rangeX', 0, 30, 1);
+  gui.add(settings, 'rangeY', 0, 12, 1);
   gui.add(settings, 'speed', 0, 0.005);
   gui.add(settings, 'trail');
 }
