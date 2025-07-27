@@ -1,4 +1,4 @@
-import { usePageContext } from '../backgrounds/PageContext';
+import { usePageContext } from '../PageContext';
 import { GameOfLife } from '../backgrounds/GameOfLife';
 import { PlainBlack } from '../backgrounds/Plains';
 import { SquareClover } from '../backgrounds/SquareClover';

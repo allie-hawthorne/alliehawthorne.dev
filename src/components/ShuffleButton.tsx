@@ -1,7 +1,7 @@
 import PlayIcon from 'mdi-react/PlayIcon';
 import { useState } from 'react';
 import { Button } from './Button';
-import { usePageContext } from '../backgrounds/PageContext';
+import { usePageContext } from '../PageContext';
 import { Screen } from '../utils/screen';
 
 export const ShuffleButton = () => {

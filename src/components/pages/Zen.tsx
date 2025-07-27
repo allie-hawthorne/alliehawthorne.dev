@@ -4,7 +4,7 @@ import ChevronLeft from 'mdi-react/ChevronLeftIcon';
 import Help from 'mdi-react/HelpIcon';
 import FullscreenIcon from 'mdi-react/FullscreenIcon'
 import { Button } from '../Button';
-import { usePageContext } from '../../backgrounds/PageContext';
+import { usePageContext } from '../../PageContext';
 import { defaultTransition } from '../../App';
 
 export const Zen = () => {

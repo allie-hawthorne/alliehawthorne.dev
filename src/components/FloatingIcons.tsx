@@ -1,7 +1,7 @@
 import FullscreenExitIcon from 'mdi-react/FullscreenExitIcon'
 import FullscreenIcon from 'mdi-react/FullscreenIcon'
 import { ShuffleButton } from './ShuffleButton'
-import { usePageContext } from '../backgrounds/PageContext'
+import { usePageContext } from '../PageContext'
 
 export const FloatingIcons = () => {
   const {zenMode, backgroundIndex} = usePageContext();

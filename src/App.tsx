@@ -1,7 +1,7 @@
 import { CustomBackground } from './components/CustomBackground';
 import { LinksBar } from './components/LinksBar';
 import { PageWrapper } from './components/PageWrapper';
-import { usePageContext } from './backgrounds/PageContext';
+import { usePageContext } from './PageContext';
 import { Screen, screensComponentMap } from './utils/screen';
 import { getColDarkCss } from './backgrounds/shared';
 
