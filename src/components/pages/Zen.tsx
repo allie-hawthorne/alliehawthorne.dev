@@ -11,7 +11,7 @@ export const Zen = () => {
     <div className='flex items-center justify-around absolute bottom-10 gap-8'>
       <Button
         secondary
-        className='h-16 w-16'
+        className='h-12 w-12'
         icon={ChevronLeft}
         onClick={prevBackground}
         />
@@ -21,7 +21,7 @@ export const Zen = () => {
         />
       <Button
         secondary
-        className='h-16 w-16'
+        className='h-12 w-12'
         icon={ChevronRight}
         onClick={nextBackground}
       />
