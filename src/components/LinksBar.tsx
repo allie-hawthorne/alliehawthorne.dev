@@ -5,9 +5,10 @@ import { pinks } from './Button'
 import { getColDarkCss } from '../backgrounds/shared'
 
 export const LinksBar = () => {
-  const {screen, setScreen, zenMode} = usePageContext()
+  const {screen, setScreen, zenMode, fullscreen} = usePageContext()
 
   const homeScreen = zenMode ? Screen.Zen : Screen.Splash;
+  const opacity = fullscreen ? 'opacity-0' : 'opacity-100';
 
   const screensMap = {
     about: Screen.About,
@@ -15,7 +16,7 @@ export const LinksBar = () => {
   }
 
   return <div
-    className='flex justify-around w-full text-xl'
+    className={`${opacity} ${defaultTransition} flex justify-around w-full text-xl`}
     style={{
       backgroundColor: getColDarkCss(0.9),
       boxShadow: `0 0 100px 100px ${getColDarkCss(0.9)}`,

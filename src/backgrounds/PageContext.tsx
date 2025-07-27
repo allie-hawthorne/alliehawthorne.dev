@@ -12,6 +12,8 @@ interface ContextProps {
   screen: Screen
   setScreen: Dispatch<SetStateAction<Screen>>
   leaveZenMode: () => void
+  fullscreen: boolean
+  setFullscreen: Dispatch<SetStateAction<boolean>>
 }
 const PageContext = createContext<ContextProps>({
   backgroundIndex: 0,
@@ -22,12 +24,14 @@ const PageContext = createContext<ContextProps>({
   screen: Screen.Splash,
   setScreen: () => {},
   leaveZenMode: () => {},
+  fullscreen: false,
+  setFullscreen: () => {},
 });
-
 
 export const PageProvider = ({children}: PropsWithChildren) => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const [zenMode, setZenMode] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
   const [screen, setScreen] = useState<Screen>(Screen.Splash);
 
   // Ensures any dat.gui instances are cleaned up when the background changes
@@ -61,7 +65,9 @@ export const PageProvider = ({children}: PropsWithChildren) => {
     setZenMode,
     screen,
     setScreen,
-    leaveZenMode
+    leaveZenMode,
+    fullscreen,
+    setFullscreen
   }}>
     {children}
   </PageContext.Provider>

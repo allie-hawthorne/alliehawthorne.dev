@@ -5,13 +5,17 @@ import Help from 'mdi-react/HelpIcon';
 import FullscreenIcon from 'mdi-react/FullscreenIcon'
 import { Button } from '../Button';
 import { usePageContext } from '../../backgrounds/PageContext';
+import { defaultTransition } from '../../App';
 
 export const Zen = () => {
-  const {leaveZenMode, nextBackground, prevBackground} = usePageContext();
+  const {leaveZenMode, nextBackground, prevBackground, fullscreen, setFullscreen} = usePageContext();
+
+  const primaryOpacity = fullscreen ? 'opacity-0' : 'opacity-100';
+  const secondaryOpacity = fullscreen ? 'opacity-20 hover:opacity-100' : '';
 
   return <div className='flex justify-center relative w-full h-screen'>
-    <div className='flex flex-col items-center absolute bottom-0'>
-      <div className='flex items-center justify-around gap-8'>
+    <div className='flex flex-col items-center absolute bottom-0 z-10'>
+      <div className={`flex items-center justify-around gap-8 ${primaryOpacity} ${defaultTransition}`}>
         <Button
           secondary
           className='h-12 w-12'
@@ -29,7 +33,7 @@ export const Zen = () => {
           onClick={nextBackground}
         />
       </div>
-      <div className='flex items-center justify-around gap-10 mt-2'>
+      <div className={`${secondaryOpacity} ${defaultTransition} flex items-center justify-around gap-10 mt-2`}>
         <Button
           secondary
           className='h-8 w-8'
@@ -40,7 +44,7 @@ export const Zen = () => {
           secondary
           className='h-8 w-8'
           icon={FullscreenIcon}
-          onClick={() => {}}
+          onClick={() => setFullscreen(prev => !prev)}
         />
       </div>
     </div>
