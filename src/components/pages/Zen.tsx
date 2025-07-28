@@ -14,7 +14,7 @@ export const Zen = () => {
   const secondaryOpacity = fullscreen ? 'opacity-20 hover:opacity-100' : '';
 
   return <div className='flex justify-center relative w-full h-screen'>
-    <div className='flex flex-col items-center absolute bottom-0 z-10'>
+    <div className='flex flex-col items-center absolute bottom-10 md:bottom-0 z-10'>
       <div className={`flex items-center justify-around gap-8 ${primaryOpacity} ${defaultTransition}`}>
         <Button
           secondary
