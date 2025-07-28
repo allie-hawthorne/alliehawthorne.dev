@@ -37,6 +37,16 @@ export const PageProvider = ({children}: PropsWithChildren) => {
   // Ensures any dat.gui instances are cleaned up when the background changes
   useEffect(removeDatGui, [backgroundIndex]);
 
+  // Toggles dat.gui panel when fullscreen is toggled
+  useEffect(() => {
+    const hiddenClass = 'hidden';
+    const existingGui = document.querySelector('.dg.main');
+
+    if (!existingGui) return;
+
+    fullscreen ? existingGui.classList.add(hiddenClass) : existingGui.classList.remove(hiddenClass);
+  }, [fullscreen]);
+
   const prevBackground = () => {
     setBackgroundIndex(prevIndex => {
       const newIndex = prevIndex - 1;
