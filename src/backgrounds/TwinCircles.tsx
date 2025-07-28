@@ -11,7 +11,7 @@ interface Position {
 }
 let positions: Position[][] = [];
 const MAX_POS = 50;
-const BASE_SPEED = 0.2e-3;
+const BASE_SPEED = 0.4e-2;
 
 export const TwinCircles = () => {
   const setParent = useP5DupeRemover();
@@ -44,7 +44,7 @@ export const TwinCircles = () => {
       speed: md ? BASE_SPEED : BASE_SPEED * 2,
     }
 
-    const theta = p5.millis()*normalisers.speed;
+    const theta = p5.frameCount*normalisers.speed;
     positions.push([
       {x: p5.sin(2*theta)*normalisers.width, y: p5.cos(theta)*normalisers.height},
       {x: -p5.sin(2*theta)*normalisers.width, y: -p5.cos(theta)*normalisers.height},
