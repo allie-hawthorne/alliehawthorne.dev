@@ -8,10 +8,13 @@ import { PerlinGrid } from '../backgrounds/PerlinGrid';
 import { PageWrapper } from './PageWrapper';
 import { Ellipses } from '../backgrounds/Ellipses';
 import { CirclesAndLines } from '../backgrounds/CirclesAndLines';
+import { Checkers } from '../backgrounds/Checkers';
 
+// TODO: Implement lazy loading for these components?
 export const backgrounds = [
   PlainBlack,
   PerlinGrid,
+  Checkers,
   Ellipses,
   TwinCircles,
   CirclesAndLines,
