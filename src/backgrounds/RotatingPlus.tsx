@@ -7,8 +7,6 @@ import { cols, removeDatGui } from './shared';
 const NUM_TILE_WIDTH = 10
 const TIMING_SPEED = 0.0002;
 
-// TODO: Remove global variable!
-let time = 0;
 let windowMin: number;
 let tileSize: number;
 
@@ -54,29 +52,29 @@ export const RotatingPlus = () => {
     windowMin = windowMin % 2 ? windowMin - 1 : windowMin;
     tileSize = windowMin/NUM_TILE_WIDTH;
 
-    time = (TIMING_SPEED*p5.millis())%1;
+    const time = (TIMING_SPEED*p5.millis())%1;
 
-    time > 0.5 ? doPlusses(p5) : doSquares(p5);
+    time > 0.5 ? doPlusses(p5, time) : doSquares(p5, time);
   }
 
   return <Sketch setup={setup} draw={draw} windowResized={windowResized}/>;
 };
 
-  function doPlusses(p5: P5) {
+  function doPlusses(p5: P5, time: number) {
     p5.background(cols.dark);
     p5.fill(cols.light);
 
-    doGrid(p5, 0, drawPlus);
+    doGrid(p5, 0, time, drawPlus);
   }
 
-  function doSquares(p5: P5) {
+  function doSquares(p5: P5, time: number) {
     p5.background(cols.light);
     p5.fill(cols.dark);
 
-    doGrid(p5, .5, drawSquare);
+    doGrid(p5, .5, time, drawSquare);
   }
 
-  function doGrid(p5: P5, offset: number, drawItem: (p5: P5, chunkiness: number) => void) {
+  function doGrid(p5: P5, offset: number, time: number, drawItem: (p5: P5, chunkiness: number) => void) {
     const chunkiness = p5.map(settings.chunkiness, 0, 10, MAX_CHUNKINESS, MIN_CHUNKINESS);
 
     for (let i = 0-offset; i < NUM_TILE_WIDTH; i++) {
