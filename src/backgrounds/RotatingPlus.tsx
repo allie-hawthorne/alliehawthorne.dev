@@ -9,7 +9,6 @@ const TIMING_SPEED = 0.0002;
 
 // TODO: Remove global variable!
 let time = 0;
-let rotation = 0;
 let windowMin: number;
 let tileSize: number;
 
@@ -56,7 +55,6 @@ export const RotatingPlus = () => {
     tileSize = windowMin/NUM_TILE_WIDTH;
 
     time = (TIMING_SPEED*p5.millis())%1;
-    rotation = p5.map(time, 0, 1, -.5, .5)
 
     time > 0.5 ? doPlusses(p5) : doSquares(p5);
   }
