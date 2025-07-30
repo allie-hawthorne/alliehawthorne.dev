@@ -51,23 +51,23 @@ export const RotatingPlus = () => {
     p5.background(cols.dark);
     p5.fill(cols.light);
 
-    doGrid(p5, 0, () => drawPlus(p5));
+    doGrid(p5, 0, drawPlus);
   }
 
   function doSquares(p5: P5) {
     p5.background(cols.light);
     p5.fill(cols.dark);
 
-    doGrid(p5, .5, () => drawSquare(p5));
+    doGrid(p5, .5, drawSquare);
   }
 
-  function doGrid(p5: P5, offset: number, drawItem: () => void) {
+  function doGrid(p5: P5, offset: number, drawItem: (p5: P5) => void) {
     for (let i = 0-offset; i < NUM_TILE_WIDTH; i++) {
       for (let j = 0-offset; j < NUM_TILE_WIDTH; j++) {
         p5.push();
         p5.translate(i*tileSize, j*tileSize)
         p5.rotate(p5.PI * time)
-        drawItem();
+        drawItem(p5);
         p5.pop();
       }
     }
