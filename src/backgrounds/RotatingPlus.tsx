@@ -1,17 +1,33 @@
 import P5 from 'p5';
 import { useP5DupeRemover } from '../utils/p5DupeRemover';
 import Sketch from 'react-p5';
-import { cols } from './shared';
+import * as dat from 'dat.gui'
+import { cols, removeDatGui } from './shared';
 
 const NUM_TILE_WIDTH = 10
 const TIMING_SPEED = 0.0002;
-const PLUS_THICKNESS = 8
 
 // TODO: Remove global variable!
 let time = 0;
 let rotation = 0;
 let windowMin: number;
 let tileSize: number;
+
+const MAX_CHUNKINESS = 8;
+const MIN_CHUNKINESS = 2;
+const settings = {
+  chunkiness: 2
+}
+
+function createDatGui() {
+  // Deals with duplicate created due to safe mode in development
+  removeDatGui();
+
+  const gui = new dat.GUI();
+
+  gui.add(settings, 'chunkiness', 0, 10).name('Plus Chunkiness');
+}
+
 
 export const RotatingPlus = () => {
   const setParent = useP5DupeRemover();
@@ -25,6 +41,7 @@ export const RotatingPlus = () => {
 
     p5.noStroke();
     p5.rectMode(p5.CENTER);
+    createDatGui();
   };
 
   const windowResized = (p5: P5) => {
@@ -61,23 +78,25 @@ export const RotatingPlus = () => {
     doGrid(p5, .5, drawSquare);
   }
 
-  function doGrid(p5: P5, offset: number, drawItem: (p5: P5) => void) {
+  function doGrid(p5: P5, offset: number, drawItem: (p5: P5, chunkiness: number) => void) {
+    const chunkiness = p5.map(settings.chunkiness, 0, 10, MAX_CHUNKINESS, MIN_CHUNKINESS);
+
     for (let i = 0-offset; i < NUM_TILE_WIDTH; i++) {
       for (let j = 0-offset; j < NUM_TILE_WIDTH; j++) {
         p5.push();
         p5.translate(i*tileSize, j*tileSize)
         p5.rotate(p5.PI * time)
-        drawItem(p5);
+        drawItem(p5, chunkiness);
         p5.pop();
       }
     }
   }
 
-  function drawPlus(p5: P5) {
-    p5.rect(0,0,tileSize/PLUS_THICKNESS, tileSize);
-    p5.rect(0,0,tileSize, tileSize/PLUS_THICKNESS);
+  function drawPlus(p5: P5, chunkiness: number) {
+    p5.rect(0,0,tileSize/chunkiness, tileSize);
+    p5.rect(0,0,tileSize, tileSize/chunkiness);
   }
 
-  function drawSquare(p5: P5) {
-    p5.square(0,0,tileSize*((PLUS_THICKNESS-1)/PLUS_THICKNESS));
+  function drawSquare(p5: P5, chunkiness: number) {
+    p5.square(0,0,tileSize*((chunkiness-1)/chunkiness));
   }
