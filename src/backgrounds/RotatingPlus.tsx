@@ -29,6 +29,12 @@ export const RotatingPlus = () => {
 
   const [tileSize, setTileSize] = useState(0);
 
+  function resizeTiles(p5: P5) {
+    let windowMax = Math.max(p5.windowHeight, p5.windowWidth);
+    windowMax % 2 && windowMax--;
+    setTileSize(windowMax/NUM_TILE_WIDTH);
+  }
+
   function doPlusses(p5: P5, time: number) {
     p5.background(cols.dark);
     p5.fill(cols.light);
@@ -76,14 +82,12 @@ export const RotatingPlus = () => {
     p5.noStroke();
     p5.rectMode(p5.CENTER);
     createDatGui();
-
-    let windowMax = Math.max(p5.windowHeight, p5.windowWidth);
-    windowMax % 2 && windowMax--;
-    setTileSize(windowMax/NUM_TILE_WIDTH);
+    resizeTiles(p5);
   };
 
   const windowResized = (p5: P5) => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+    resizeTiles(p5);
   };
 
   const draw = (p5: P5) => {
