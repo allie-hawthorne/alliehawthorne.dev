@@ -10,8 +10,9 @@ import { Ellipses } from '../backgrounds/Ellipses';
 import { CirclesAndLines } from '../backgrounds/CirclesAndLines';
 import { Checkers } from '../backgrounds/Checkers';
 import { ContrastingCircles } from '../backgrounds/ContrastingCircles';
+import { RotatingPlus } from '../backgrounds/RotatingPlus';
 
-// TODO: Implement lazy loading for these components?
+// TODO: Implement lazy loading for these components? This would also help with resizing issues
 export const backgrounds = [
   PlainBlack,
   PerlinGrid,
@@ -19,6 +20,7 @@ export const backgrounds = [
   Ellipses,
   ContrastingCircles,
   TwinCircles,
+  RotatingPlus,
   CirclesAndLines,
   GameOfLife,
   SquareClover,
