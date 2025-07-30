@@ -1,14 +1,12 @@
 import P5 from 'p5';
-import { useP5DupeRemover } from '../utils/p5DupeRemover';
 import Sketch from 'react-p5';
 import * as dat from 'dat.gui'
+import { useP5DupeRemover } from '../utils/p5DupeRemover';
 import { cols, removeDatGui } from './shared';
+import { useState } from 'react';
 
 const NUM_TILE_WIDTH = 10
 const TIMING_SPEED = 0.0002;
-
-let windowMin: number;
-let tileSize: number;
 
 const MAX_CHUNKINESS = 8;
 const MIN_CHUNKINESS = 2;
@@ -29,36 +27,7 @@ function createDatGui() {
 export const RotatingPlus = () => {
   const setParent = useP5DupeRemover();
 
-  const setup = (p5: P5, canvasParentRef: Element) => {
-    setParent(canvasParentRef);
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    p5.background(cols.dark);
-    p5.frameRate(60);
-    p5.pixelDensity(1);
-
-    p5.noStroke();
-    p5.rectMode(p5.CENTER);
-    createDatGui();
-  };
-
-  const windowResized = (p5: P5) => {
-    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
-  };
-
-  const draw = (p5: P5) => {
-    p5.translate(tileSize/2, tileSize/2)
-
-    windowMin = Math.max(p5.windowHeight, p5.windowWidth);
-    windowMin = windowMin % 2 ? windowMin - 1 : windowMin;
-    tileSize = windowMin/NUM_TILE_WIDTH;
-
-    const time = (TIMING_SPEED*p5.millis())%1;
-
-    time > 0.5 ? doPlusses(p5, time) : doSquares(p5, time);
-  }
-
-  return <Sketch setup={setup} draw={draw} windowResized={windowResized}/>;
-};
+  const [tileSize, setTileSize] = useState(0);
 
   function doPlusses(p5: P5, time: number) {
     p5.background(cols.dark);
@@ -96,3 +65,34 @@ export const RotatingPlus = () => {
   function drawSquare(p5: P5, chunkiness: number) {
     p5.square(0,0,tileSize*((chunkiness-1)/chunkiness));
   }
+
+  const setup = (p5: P5, canvasParentRef: Element) => {
+    setParent(canvasParentRef);
+    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+    p5.background(cols.dark);
+    p5.frameRate(60);
+    p5.pixelDensity(1);
+
+    p5.noStroke();
+    p5.rectMode(p5.CENTER);
+    createDatGui();
+
+    let windowMax = Math.max(p5.windowHeight, p5.windowWidth);
+    windowMax % 2 && windowMax--;
+    setTileSize(windowMax/NUM_TILE_WIDTH);
+  };
+
+  const windowResized = (p5: P5) => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  };
+
+  const draw = (p5: P5) => {
+    p5.translate(tileSize/2, tileSize/2)
+
+    const time = (TIMING_SPEED*p5.millis())%1;
+
+    time > 0.5 ? doPlusses(p5, time) : doSquares(p5, time);
+  }
+
+  return <Sketch setup={setup} draw={draw} windowResized={windowResized}/>;
+};
