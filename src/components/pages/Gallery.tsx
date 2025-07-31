@@ -8,7 +8,7 @@ import { usePageContext } from '../../PageContext';
 import { defaultTransition } from '../../App';
 import { useEffect, useState } from 'react';
 
-export const Zen = () => {
+export const Gallery = () => {
   const {stopGallery, nextBackground, prevBackground, fullscreen, setFullscreen} = usePageContext();
 
   const [primaryStyles, setPrimaryStyles] = useState('');

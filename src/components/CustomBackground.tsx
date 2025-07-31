@@ -23,7 +23,7 @@ export const CustomBackground = () => {
   const {backgroundIndex, screen} = usePageContext();
 
   return (
-    <div className="h-full w-full absolute overflow-hidden" style={{filter: screen === Screen.Zen ? undefined : 'blur(2px)'}}>
+    <div className="h-full w-full absolute overflow-hidden" style={{filter: screen === Screen.Gallery ? undefined : 'blur(2px)'}}>
       {backgrounds.map((Component, index) => (
         <PageWrapper display={index === backgroundIndex} key={index}>
           <Component key={index}/>

@@ -7,7 +7,7 @@ import { getColDarkCss } from '../backgrounds/shared'
 export const LinksBar = () => {
   const {screen, setScreen, showGallery, fullscreen} = usePageContext()
 
-  const homeScreen = showGallery ? Screen.Zen : Screen.Splash;
+  const homeScreen = showGallery ? Screen.Gallery : Screen.Splash;
   const opacity = fullscreen ? 'opacity-0' : 'opacity-100';
 
   const screensMap = {

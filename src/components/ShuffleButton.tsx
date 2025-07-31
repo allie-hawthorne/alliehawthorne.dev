@@ -13,7 +13,7 @@ export const ShuffleButton = () => {
     icon={PlayIcon}
     className={`${glowing} h-20 w-20`}
     onClick={() => {
-      setScreen(Screen.Zen)
+      setScreen(Screen.Gallery)
       setShowGallery(true);
       nextBackground();
       setGlowing('');

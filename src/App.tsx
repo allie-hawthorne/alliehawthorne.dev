@@ -10,7 +10,7 @@ export const defaultTransition = 'transition-all duration-500';
 export default function() {
   const {screen, showGallery} = usePageContext()
 
-  const galleryInBackground = showGallery && screen !== Screen.Zen
+  const galleryInBackground = showGallery && screen !== Screen.Gallery
 
   const style = galleryInBackground ? {
     backgroundColor: getColDarkCss(0.8),
