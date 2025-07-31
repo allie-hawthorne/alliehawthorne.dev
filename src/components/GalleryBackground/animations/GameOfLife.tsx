@@ -3,16 +3,12 @@ import { useState } from 'react';
 import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
 import { usePrevious } from '@uidotdev/usehooks';
+import { colours } from '../../../utils/colourUtils';
 
 const TILE_SIZE = 10;
 const FRAME_RATE = 25;
 
 const EMPTY_PERCENTAGE = 0.8;
-
-const cols = {
-  dark: 30,
-  light: 150,
-}
 
 export const GameOfLife = () => {
   const setParent = useP5DupeRemover();
@@ -33,7 +29,7 @@ export const GameOfLife = () => {
   const drawGrid = (p5: p5) => {
     for (let i = 0; i < gridLength; i++) {
       for (let j = 0; j < gridHeight; j++) {
-        p5.fill(gameState[j][i] ? cols.light : cols.dark);
+        p5.fill(gameState[j][i] ? colours.light : colours.dark);
         p5.square(i*TILE_SIZE, j*TILE_SIZE, TILE_SIZE);
       }
     }
@@ -81,7 +77,7 @@ export const GameOfLife = () => {
   };
 
   const draw = (p5: p5) => {
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     drawGrid(p5);
     const isSame = checkPrevious();
     setGameState(isSame ? randomiseGrid() : updateGameState());
