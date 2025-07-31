@@ -1,7 +1,7 @@
 import p5 from 'p5';
 import Sketch from 'react-p5';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
-import { cols } from './shared';
+import { cols } from '../../../utils/shared';
 
 let angle1 = 0;
 let angle2 = Math.PI;

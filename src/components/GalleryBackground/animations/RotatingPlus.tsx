@@ -2,7 +2,7 @@ import P5 from 'p5';
 import Sketch from 'react-p5';
 import * as dat from 'dat.gui'
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
-import { cols, removeDatGui } from './shared';
+import { cols, removeDatGui } from '../../../utils/shared';
 import { useState } from 'react';
 
 const NUM_TILE_WIDTH = 10

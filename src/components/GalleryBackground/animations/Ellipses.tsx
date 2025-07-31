@@ -3,7 +3,7 @@ import Sketch from 'react-p5';
 import * as dat from 'dat.gui';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import { useEffect, useState } from 'react';
-import { cols, removeDatGui } from './shared';
+import { cols, removeDatGui } from '../../../utils/shared';
 
 const HUE_AMPLITUDE = 10;
 
