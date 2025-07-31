@@ -11,18 +11,21 @@ import { useEffect, useState } from 'react';
 export const Zen = () => {
   const {leaveZenMode, nextBackground, prevBackground, fullscreen, setFullscreen} = usePageContext();
 
-  const primaryOpacity = fullscreen ? 'opacity-0' : '';
-
-  const [secondaryOpacity, setSecondaryOpacity] = useState('');
+  const [primaryStyles, setPrimaryStyles] = useState('');
+  const [secondaryStyles, setSecondaryStyles] = useState('');
   useEffect(() => {
-    if (fullscreen) setTimeout(() => setSecondaryOpacity('opacity-20'), 500);
-    else setSecondaryOpacity('')
+    if (fullscreen) {
+      setPrimaryStyles('invisible opacity-0');
+      setTimeout(() => setSecondaryStyles('opacity-20'), 500);
+      return;
+    }
+    setSecondaryStyles('');
+    setPrimaryStyles('');
   }, [fullscreen]);
-
 
   return <div className='flex justify-center relative w-full h-screen'>
     <div className='flex flex-col items-center absolute bottom-10 md:bottom-0 z-10'>
-      <div className={`flex items-center justify-around gap-8 ${primaryOpacity} ${defaultTransition}`}>
+      <div className={`flex items-center justify-around gap-8 ${primaryStyles} ${defaultTransition}`}>
         <Button
           secondary
           className='h-12 w-12'
@@ -42,9 +45,9 @@ export const Zen = () => {
         />
       </div>
       <div
-        className={`${secondaryOpacity} ${defaultTransition} flex items-center justify-around gap-8 md:gap-10 mt-2`}
-        onMouseEnter={() => setSecondaryOpacity('')}
-        onMouseLeave={() => setSecondaryOpacity('opacity-20')}
+        className={`${secondaryStyles} ${defaultTransition} flex items-center justify-around gap-8 md:gap-10 mt-2`}
+        onMouseEnter={() => setSecondaryStyles('')}
+        onMouseLeave={() => fullscreen && setSecondaryStyles('opacity-20')}
       >
         <Button
           secondary

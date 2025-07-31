@@ -1,4 +1,4 @@
-import { PropsWithChildren, useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { defaultTransition } from '../App';
 import { MdiReactIconComponentType } from 'mdi-react';
 
