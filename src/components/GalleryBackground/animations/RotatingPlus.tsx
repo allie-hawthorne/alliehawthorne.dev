@@ -1,9 +1,7 @@
 import P5 from 'p5';
 import Sketch from 'react-p5';
-import { ReactDatGui } from '../../../utils/datGuiUtils';
-import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
-import { colours } from '../../../utils/colourUtils';
 import { useState } from 'react';
+import { colours, ReactDatGui, useP5DupeRemover } from '../../../utils';
 
 const NUM_TILE_WIDTH = 10
 const TIMING_SPEED = 0.0002;

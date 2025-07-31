@@ -2,7 +2,7 @@ import PlayIcon from 'mdi-react/PlayIcon';
 import { useState } from 'react';
 import { Button } from './Button';
 import { usePageContext } from '../../PageContext';
-import { Screen } from '../../utils/screen';
+import { Screen } from '../../utils';
 
 export const StartGalleryButton = () => {
   const {nextBackground, setScreen, setShowGallery} = usePageContext();

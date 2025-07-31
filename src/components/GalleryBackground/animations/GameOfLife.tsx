@@ -1,9 +1,8 @@
 import p5 from 'p5';
-import { useState } from 'react';
-import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
+import { useState } from 'react';
+import { colours, useP5DupeRemover } from '../../../utils';
 import { usePrevious } from '@uidotdev/usehooks';
-import { colours } from '../../../utils/colourUtils';
 
 const TILE_SIZE = 10;
 const FRAME_RATE = 25;

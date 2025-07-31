@@ -1,6 +1,6 @@
 import { ContentWrapper } from '../wrappers/ContentWrapper';
 import { NowPlaying } from '../NowPlaying';
-import { useBreakpoints } from '../../utils/breakpointUtils';
+import { useBreakpoints } from '../../utils';
 import { data } from '../../linkData.json';
 
 interface LinkProps extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {

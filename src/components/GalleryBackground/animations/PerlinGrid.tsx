@@ -1,9 +1,7 @@
 import P5 from 'p5';
-import { ReactDatGui } from '../../../utils/datGuiUtils';
-import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
-import { colours } from '../../../utils/colourUtils';
 import { useEffect, useState } from 'react';
+import { colours, ReactDatGui, useP5DupeRemover } from '../../../utils';
 
 export const settings = {
   rotation: false,

@@ -1,8 +1,6 @@
 import P5 from 'p5';
-import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
-import { colours } from '../../../utils/colourUtils';
-
+import { colours, useP5DupeRemover } from '../../../utils';
 
 let squareSize: number;
 let timing: number;

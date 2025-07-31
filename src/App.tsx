@@ -2,8 +2,7 @@ import { GalleryBackground } from './components/GalleryBackground';
 import { LinksBar } from './components/LinksBar';
 import { PageWrapper } from './components/wrappers/PageWrapper';
 import { usePageContext } from './PageContext';
-import { Screen, screensComponentMap } from './utils/screen';
-import { getDarkCss } from './utils/colourUtils';
+import { getDarkCss, Screen, screensComponentMap } from './utils';
 
 export const defaultTransition = 'transition-all duration-500';
 
