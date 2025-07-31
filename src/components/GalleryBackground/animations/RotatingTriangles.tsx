@@ -1,7 +1,7 @@
 import p5 from 'p5';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
-import { cols } from '../../../utils/shared';
+import { cols } from '../../../utils/colourUtils';
 
 // TODO: I don't like how this looks on mobile - the vars should be responsive
 // TODO: I just copy/pasted from old codebase - probably should clean up at some point

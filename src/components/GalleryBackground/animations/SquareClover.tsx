@@ -1,7 +1,7 @@
 import p5 from 'p5';
 import Sketch from 'react-p5';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
-import { cols } from '../../../utils/shared';
+import { cols } from '../../../utils/colourUtils';
 
 const SQUARE_SIZE = 100;
 const CIRCLE_RADIUS = 200;

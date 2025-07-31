@@ -3,7 +3,7 @@ import { LinksBar } from './components/LinksBar';
 import { PageWrapper } from './components/wrappers/PageWrapper';
 import { usePageContext } from './PageContext';
 import { Screen, screensComponentMap } from './utils/screen';
-import { getColDarkCss } from './utils/shared';
+import { getColDarkCss } from './utils/colourUtils';
 
 export const defaultTransition = 'transition-all duration-500';
 

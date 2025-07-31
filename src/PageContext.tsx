@@ -1,7 +1,7 @@
 import { Dispatch, PropsWithChildren, SetStateAction, createContext, useContext, useEffect, useState } from 'react';
 import { backgrounds } from './components/GalleryBackground';
 import { Screen } from './utils/screen';
-import { removeDatGui } from './utils/shared';
+import { removeDatGui } from './utils/colourUtils';
 
 interface ContextProps {
   backgroundIndex: number

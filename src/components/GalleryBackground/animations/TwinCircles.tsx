@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
 import { getCurrentBreakpoints } from '../../utils/breakpointUtils';
-import { cols } from '../../../utils/shared';
+import { cols } from '../../../utils/colourUtils';
 
 interface Position {
   x: number;
