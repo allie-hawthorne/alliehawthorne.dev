@@ -1,5 +1,5 @@
-import playing from '../assets/playing.webm';
-import spotify from '../assets/spotify.svg'
+import playing from '../../assets/playing.webm';
+import spotify from '../../assets/spotify.svg'
 import { ScaleLoader } from 'react-spinners';
 import { timeAgo } from './timeAgo';
 import { useGetTrack } from './useGetTrack';

@@ -1,5 +1,5 @@
 import p5 from 'p5';
-import { useP5DupeRemover } from '../../utils/p5DupeRemover';
+import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
 import { colours } from '../../../utils/colourUtils';
 
@@ -23,7 +23,6 @@ const bounce = () => {
 
 export const RotatingTriangles = () => {
   const setParent = useP5DupeRemover();
-
 
   const setup = (p5: p5, canvasParentRef: Element) => {
     setParent(canvasParentRef);

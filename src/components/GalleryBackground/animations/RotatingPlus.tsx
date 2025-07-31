@@ -1,8 +1,9 @@
 import P5 from 'p5';
 import Sketch from 'react-p5';
 import * as dat from 'dat.gui'
-import { useP5DupeRemover } from '../../utils/p5DupeRemover';
-import { colours, removeDatGui } from '../../../utils/colourUtils';
+import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
+import { removeDatGui } from '../../../utils/datGuiUtils';
+import { colours } from '../../../utils/colourUtils';
 import { useState } from 'react';
 
 const NUM_TILE_WIDTH = 10

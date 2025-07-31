@@ -1,5 +1,5 @@
 import * as dat from 'dat.gui';
-import { removeDatGui } from '../../../../utils/colourUtils';
+import { removeDatGui } from '../../../../utils/datGuiUtils';
 
 export const settings = {
   rotation: false,

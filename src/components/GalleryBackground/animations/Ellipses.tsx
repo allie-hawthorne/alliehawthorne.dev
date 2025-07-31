@@ -1,9 +1,10 @@
 import P5 from 'p5';
 import Sketch from 'react-p5';
 import * as dat from 'dat.gui';
-import { useP5DupeRemover } from '../../utils/p5DupeRemover';
+import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
 import { useEffect, useState } from 'react';
-import { colours, removeDatGui } from '../../../utils/colourUtils';
+import { colours } from '../../../utils/colourUtils';
+import { removeDatGui } from '../../../utils/datGuiUtils';
 
 const HUE_AMPLITUDE = 10;
 

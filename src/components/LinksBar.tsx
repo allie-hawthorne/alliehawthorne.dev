@@ -2,7 +2,7 @@ import { usePageContext } from '../PageContext'
 import { defaultTransition } from '../App'
 import { Screen } from '../utils/screen'
 import { pinks } from './buttons/Button'
-import { getColDarkCss } from './backgrounds/shared'
+import { getDarkCss } from '../utils/colourUtils'
 
 export const LinksBar = () => {
   const {screen, setScreen, showGallery, fullscreen} = usePageContext()
@@ -18,8 +18,8 @@ export const LinksBar = () => {
   return <div
     className={`${opacity} ${defaultTransition} flex justify-around w-full text-xl`}
     style={{
-      backgroundColor: getColDarkCss(0.9),
-      boxShadow: `0 0 100px 100px ${getColDarkCss(0.9)}`,
+      backgroundColor: getDarkCss(0.9),
+      boxShadow: `0 0 100px 100px ${getDarkCss(0.9)}`,
     }}
   >
     {/* TODO: Sweeping pink boxes when tab is selected */}
