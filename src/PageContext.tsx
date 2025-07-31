@@ -55,7 +55,7 @@ export const PageProvider = ({children}: PropsWithChildren) => {
   };
 
   const nextBackground = () => {
-    setBackgroundIndex((prevIndex) => {
+    setBackgroundIndex(prevIndex => {
       const newIndex = prevIndex + 1;
       return newIndex >= backgrounds.length ? 1 : newIndex;
     });
