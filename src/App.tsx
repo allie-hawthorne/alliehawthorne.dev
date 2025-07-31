@@ -24,7 +24,7 @@ export default function() {
       <div style={style} className={`${defaultTransition} absolute w-full h-full flex items-center justify-center flex-col`}>
         <div className='flex items-center justify-center flex-1'>
           {Object.entries(screensComponentMap).map(([screenName, component]) => (
-            <PageWrapper key={screenName} display={screen === screenName as Screen} className='absolute'>
+            <PageWrapper key={screenName} display={screen === screenName as Screen}>
               {component}
             </PageWrapper>
           ))}

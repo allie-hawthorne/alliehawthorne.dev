@@ -1,13 +1,13 @@
 import { PropsWithChildren, useEffect, useState } from 'react';
 import { defaultTransition } from '../App';
 
-interface PageWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
+interface PageWrapperProps {
   display: boolean
 }
 
 const TRANSITION_TIME = 300;
 
-export const PageWrapper = ({ children, display, className }: PropsWithChildren<PageWrapperProps>) => {
+export const PageWrapper = ({ children, display }: PropsWithChildren<PageWrapperProps>) => {
   const [opacity, setOpacity] = useState(1);
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -22,7 +22,7 @@ export const PageWrapper = ({ children, display, className }: PropsWithChildren<
 
   if (!show) return null;
 
-  return <div style={{ display: show ? 'unset' : 'none', opacity }} className={`${defaultTransition} ${className}`}>
+  return <div style={{ display: show ? 'unset' : 'none', opacity }} className={`${defaultTransition} absolute`}>
     {children}
   </div>;
 };
