@@ -4,7 +4,7 @@ import { Button } from './Button';
 import { usePageContext } from '../PageContext';
 import { Screen } from '../utils/screen';
 
-export const ShuffleButton = () => {
+export const StartGalleryButton = () => {
   const {nextBackground, setScreen, setShowGallery} = usePageContext();
 
   const [glowing, setGlowing] = useState('glowing');
@@ -18,7 +18,5 @@ export const ShuffleButton = () => {
       nextBackground();
       setGlowing('');
     }}
-  >
-
-  </Button>
+  />
 };
