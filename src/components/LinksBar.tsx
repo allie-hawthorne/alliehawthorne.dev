@@ -1,7 +1,7 @@
 import { usePageContext } from '../PageContext'
 import { defaultTransition } from '../App'
 import { Screen } from '../utils/screen'
-import { pinks } from './Button'
+import { pinks } from './buttons/Button'
 import { getColDarkCss } from '../backgrounds/shared'
 
 export const LinksBar = () => {

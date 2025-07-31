@@ -3,7 +3,7 @@ import ChevronRightIcon from 'mdi-react/ChevronRightIcon';
 import ChevronLeftIcon from 'mdi-react/ChevronLeftIcon';
 import HelpIcon from 'mdi-react/HelpIcon';
 import FullscreenIcon from 'mdi-react/FullscreenIcon'
-import { Button } from '../Button';
+import { Button } from '../buttons/Button';
 import { usePageContext } from '../../PageContext';
 import { defaultTransition } from '../../App';
 import { useEffect, useState } from 'react';

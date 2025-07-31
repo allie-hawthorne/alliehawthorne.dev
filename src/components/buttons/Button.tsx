@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import { defaultTransition } from '../App';
+import { defaultTransition } from '../../App';
 import { MdiReactIconComponentType } from 'mdi-react';
 
 export const pinks = [

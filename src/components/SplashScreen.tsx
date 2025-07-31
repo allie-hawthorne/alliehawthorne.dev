@@ -1,4 +1,4 @@
-import { StartGalleryButton } from './StartGalleryButton';
+import { StartGalleryButton } from './buttons/StartGalleryButton';
 
 export const SplashScreen = () => <div className='h-[90dvh] flex flex-col justify-evenly'>
   <p className='text-9xl'>allie.</p>
