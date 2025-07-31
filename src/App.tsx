@@ -1,4 +1,4 @@
-import { CustomBackground } from './components/CustomBackground';
+import { GalleryBackground } from './components/GalleryBackground';
 import { LinksBar } from './components/LinksBar';
 import { PageWrapper } from './components/wrappers/PageWrapper';
 import { usePageContext } from './PageContext';
@@ -19,7 +19,7 @@ export default function() {
 
   return (
     <div style={{backgroundColor: getColDarkCss(1)}} className='select-none text-pink-300 font-serif h-[100dvh] flex items-center justify-center flex-col'>
-      <CustomBackground />
+      <GalleryBackground />
       <div style={style} className={`${defaultTransition} absolute w-full h-full flex items-center justify-center flex-col`}>
         <div className='flex items-center justify-center flex-1'>
           {Object.entries(screensComponentMap).map(([screenName, component]) => (

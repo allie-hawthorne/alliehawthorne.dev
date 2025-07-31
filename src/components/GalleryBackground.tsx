@@ -19,7 +19,7 @@ export const backgrounds = [
   SquareClover,
 ]
 
-export const CustomBackground = () => {
+export const GalleryBackground = () => {
   const {backgroundIndex, screen} = usePageContext();
 
   return (
