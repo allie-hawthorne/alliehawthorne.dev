@@ -1,4 +1,4 @@
-import PauseIcon from 'mdi-react/PauseIcon';
+import StopIcon from 'mdi-react/StopIcon';
 import ChevronRight from 'mdi-react/ChevronRightIcon';
 import ChevronLeft from 'mdi-react/ChevronLeftIcon';
 import Help from 'mdi-react/HelpIcon';
@@ -10,7 +10,7 @@ import { defaultTransition } from '../../App';
 export const Zen = () => {
   const {leaveZenMode, nextBackground, prevBackground, fullscreen, setFullscreen} = usePageContext();
 
-  const primaryOpacity = fullscreen ? 'opacity-0' : 'opacity-100';
+  const primaryOpacity = fullscreen ? 'opacity-0' : '';
   const secondaryOpacity = fullscreen ? 'opacity-20 hover:opacity-100' : '';
 
   return <div className='flex justify-center relative w-full h-screen'>
@@ -24,7 +24,7 @@ export const Zen = () => {
           />
         <Button
           className='h-20 w-20'
-          icon={PauseIcon}
+          icon={StopIcon}
           onClick={leaveZenMode}
           />
         <Button
