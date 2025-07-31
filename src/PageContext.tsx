@@ -7,11 +7,11 @@ interface ContextProps {
   backgroundIndex: number
   nextBackground: () => void
   prevBackground: () => void
-  zenMode: boolean
-  setZenMode: Dispatch<SetStateAction<boolean>>
+  showGallery: boolean
+  setShowGallery: Dispatch<SetStateAction<boolean>>
   screen: Screen
   setScreen: Dispatch<SetStateAction<Screen>>
-  leaveZenMode: () => void
+  stopGallery: () => void
   fullscreen: boolean
   setFullscreen: Dispatch<SetStateAction<boolean>>
 }
@@ -19,18 +19,18 @@ const PageContext = createContext<ContextProps>({
   backgroundIndex: 0,
   nextBackground: () => {},
   prevBackground: () => {},
-  zenMode: false,
-  setZenMode: () => {},
+  showGallery: false,
+  setShowGallery: () => {},
   screen: Screen.Splash,
   setScreen: () => {},
-  leaveZenMode: () => {},
+  stopGallery: () => {},
   fullscreen: false,
   setFullscreen: () => {},
 });
 
 export const PageProvider = ({children}: PropsWithChildren) => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
-  const [zenMode, setZenMode] = useState(false);
+  const [showGallery, setShowGallery] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [screen, setScreen] = useState<Screen>(Screen.Splash);
 
@@ -61,9 +61,9 @@ export const PageProvider = ({children}: PropsWithChildren) => {
     });
   };
 
-  const leaveZenMode = () => {
+  const stopGallery = () => {
     setScreen(Screen.Splash);
-    setZenMode(false);
+    setShowGallery(false);
     setBackgroundIndex(0);
   }
 
@@ -71,11 +71,11 @@ export const PageProvider = ({children}: PropsWithChildren) => {
     backgroundIndex,
     nextBackground,
     prevBackground,
-    zenMode,
-    setZenMode,
+    showGallery,
+    setShowGallery,
     screen,
     setScreen,
-    leaveZenMode,
+    stopGallery,
     fullscreen,
     setFullscreen
   }}>

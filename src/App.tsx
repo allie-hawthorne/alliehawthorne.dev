@@ -8,12 +8,11 @@ import { getColDarkCss } from './backgrounds/shared';
 export const defaultTransition = 'transition-all duration-500';
 
 export default function() {
-  const {screen, zenMode} = usePageContext()
+  const {screen, showGallery} = usePageContext()
 
-  // TODO: This is dumb, consolidate these
-  const isCanvasBackgrounded = screen !== Screen.Zen && zenMode
+  const galleryInBackground = showGallery && screen !== Screen.Zen
 
-  const style = isCanvasBackgrounded ? {
+  const style = galleryInBackground ? {
     backgroundColor: getColDarkCss(0.8),
     zIndex: 1,
   } : {};

@@ -9,7 +9,7 @@ import { defaultTransition } from '../../App';
 import { useEffect, useState } from 'react';
 
 export const Zen = () => {
-  const {leaveZenMode, nextBackground, prevBackground, fullscreen, setFullscreen} = usePageContext();
+  const {stopGallery, nextBackground, prevBackground, fullscreen, setFullscreen} = usePageContext();
 
   const [primaryStyles, setPrimaryStyles] = useState('');
   const [secondaryStyles, setSecondaryStyles] = useState('');
@@ -35,7 +35,7 @@ export const Zen = () => {
         <Button
           className='h-20 w-20'
           icon={StopIcon}
-          onClick={leaveZenMode}
+          onClick={stopGallery}
           />
         <Button
           secondary

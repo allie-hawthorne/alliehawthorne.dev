@@ -5,9 +5,9 @@ import { pinks } from './Button'
 import { getColDarkCss } from '../backgrounds/shared'
 
 export const LinksBar = () => {
-  const {screen, setScreen, zenMode, fullscreen} = usePageContext()
+  const {screen, setScreen, showGallery, fullscreen} = usePageContext()
 
-  const homeScreen = zenMode ? Screen.Zen : Screen.Splash;
+  const homeScreen = showGallery ? Screen.Zen : Screen.Splash;
   const opacity = fullscreen ? 'opacity-0' : 'opacity-100';
 
   const screensMap = {

@@ -5,7 +5,7 @@ import { usePageContext } from '../PageContext';
 import { Screen } from '../utils/screen';
 
 export const ShuffleButton = () => {
-  const {nextBackground, setScreen, setZenMode} = usePageContext();
+  const {nextBackground, setScreen, setShowGallery} = usePageContext();
 
   const [glowing, setGlowing] = useState('glowing');
 
@@ -14,7 +14,7 @@ export const ShuffleButton = () => {
     className={`${glowing} h-20 w-20`}
     onClick={() => {
       setScreen(Screen.Zen)
-      setZenMode(true);
+      setShowGallery(true);
       nextBackground();
       setGlowing('');
     }}
