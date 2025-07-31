@@ -3,7 +3,7 @@ import Sketch from 'react-p5';
 import * as dat from 'dat.gui';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import { useEffect, useState } from 'react';
-import { cols, removeDatGui } from '../../../utils/colourUtils';
+import { colours, removeDatGui } from '../../../utils/colourUtils';
 
 const HUE_AMPLITUDE = 10;
 
@@ -61,7 +61,7 @@ export const Ellipses = () => {
     const circleSize = (3*settings.amplitude)/16
     p5.push();
     p5.colorMode(p5.RGB);
-    p5.background(cols.dark, cols.dark, cols.dark, settings.trail ? 2 : 255);
+    p5.background(colours.dark, colours.dark, colours.dark, settings.trail ? 2 : 255);
     p5.pop();
     p5.translate(p5.width/2, p5.height/2);
 

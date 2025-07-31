@@ -1,8 +1,8 @@
-export const cols = {
+export const colours = {
   dark: 30,
   light: 220,
 }
 
-export const getColDarkCss = (opacity?: number) => (
-  `rgba(${cols.dark}, ${cols.dark}, ${cols.dark}${opacity ? `, ${opacity}` : ''})`
+export const getDarkCss = (opacity?: number) => (
+  `rgba(${colours.dark}, ${colours.dark}, ${colours.dark}${opacity ? `, ${opacity}` : ''})`
 );

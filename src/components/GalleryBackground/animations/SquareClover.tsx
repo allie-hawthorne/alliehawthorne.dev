@@ -1,7 +1,7 @@
 import p5 from 'p5';
 import Sketch from 'react-p5';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
-import { cols } from '../../../utils/colourUtils';
+import { colours } from '../../../utils/colourUtils';
 
 const SQUARE_SIZE = 100;
 const CIRCLE_RADIUS = 200;
@@ -17,10 +17,10 @@ export const SquareClover = () => {
   const setup = (p5: p5, canvasParentRef: Element) => {
     setParent(canvasParentRef);
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.frameRate(60);
-    p5.stroke(cols.light)
-    p5.fill(cols.dark)
+    p5.stroke(colours.light)
+    p5.fill(colours.dark)
     p5.strokeWeight(3)
     p5.pixelDensity(1);
     p5.rectMode(p5.CENTER)
@@ -31,7 +31,7 @@ export const SquareClover = () => {
   };
 
   const draw = (p5: p5) => {
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.translate(p5.windowWidth / 2, p5.windowHeight / 2)
 
     for (let i = 0; i < SQUARE_COUNT/NUM_TOPS; i++) {

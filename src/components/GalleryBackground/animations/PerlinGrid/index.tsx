@@ -1,7 +1,7 @@
 import P5 from 'p5';
 import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
-import { cols } from '../../../../utils/colourUtils';
+import { colours } from '../../../../utils/colourUtils';
 import { createDatGui, settings } from './gui';
 import { useEffect, useState } from 'react';
 
@@ -20,7 +20,7 @@ export const PerlinGrid = () => {
   const setup = (p5: P5, canvasParentRef: Element) => {
     setParent(canvasParentRef);
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.frameRate(60);
     p5.noStroke();
     p5.pixelDensity(1);
@@ -39,7 +39,7 @@ export const PerlinGrid = () => {
     // Make sure we're not using HSL when setting background colour
     p5.push();
     p5.colorMode(p5.RGB)
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.pop();
     p5.translate(p5.width / 2, p5.height / 2)
 

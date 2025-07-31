@@ -2,7 +2,7 @@ import P5 from 'p5';
 import Sketch from 'react-p5';
 import * as dat from 'dat.gui'
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
-import { cols, removeDatGui } from '../../../utils/colourUtils';
+import { colours, removeDatGui } from '../../../utils/colourUtils';
 import { useState } from 'react';
 
 const NUM_TILE_WIDTH = 10
@@ -36,15 +36,15 @@ export const RotatingPlus = () => {
   }
 
   function doPlusses(p5: P5, time: number) {
-    p5.background(cols.dark);
-    p5.fill(cols.light);
+    p5.background(colours.dark);
+    p5.fill(colours.light);
 
     doGrid(p5, 0, time, drawPlus);
   }
 
   function doSquares(p5: P5, time: number) {
-    p5.background(cols.light);
-    p5.fill(cols.dark);
+    p5.background(colours.light);
+    p5.fill(colours.dark);
 
     doGrid(p5, .5, time, drawSquare);
   }
@@ -75,7 +75,7 @@ export const RotatingPlus = () => {
   const setup = (p5: P5, canvasParentRef: Element) => {
     setParent(canvasParentRef);
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.frameRate(60);
     p5.pixelDensity(1);
 

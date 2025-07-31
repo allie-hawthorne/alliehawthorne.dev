@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
 import { getCurrentBreakpoints } from '../../utils/breakpointUtils';
-import { cols } from '../../../utils/colourUtils';
+import { colours } from '../../../utils/colourUtils';
 
 interface Position {
   x: number;
@@ -24,7 +24,7 @@ export const TwinCircles = () => {
   const setup = (p5: p5, canvasParentRef: Element) => {
     setParent(canvasParentRef);
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.frameRate(60);
     p5.noStroke();
     p5.pixelDensity(1);
@@ -35,7 +35,7 @@ export const TwinCircles = () => {
   };
 
   const draw = (p5: p5) => {
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.translate(p5.windowWidth/2, p5.windowHeight/2);
 
     const normalisers = {
@@ -55,7 +55,7 @@ export const TwinCircles = () => {
     }
 
     positions.forEach((mp, i) => {
-      p5.fill(cols.light, p5.map(i, 0, MAX_POS, 0, 200));
+      p5.fill(colours.light, p5.map(i, 0, MAX_POS, 0, 200));
 
       mp.forEach((_, index) => (
         p5.ellipse(positions[i][index].x, positions[i][index].y, i, i)

@@ -1,7 +1,7 @@
 import p5 from 'p5';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
-import { cols } from '../../../utils/colourUtils';
+import { colours } from '../../../utils/colourUtils';
 
 // TODO: I don't like how this looks on mobile - the vars should be responsive
 // TODO: I just copy/pasted from old codebase - probably should clean up at some point
@@ -28,13 +28,13 @@ export const RotatingTriangles = () => {
   const setup = (p5: p5, canvasParentRef: Element) => {
     setParent(canvasParentRef);
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.frameRate(60);
     p5.pixelDensity(1);
     p5.noStroke();
 
     p5.rectMode(p5.CENTER);
-    p5.fill(cols.light);
+    p5.fill(colours.light);
   };
 
   const windowResized = (p5: p5) => {
@@ -42,7 +42,7 @@ export const RotatingTriangles = () => {
   };
 
   const draw = (p5: p5) => {
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.translate(p5.windowWidth/2, p5.windowHeight/2);
     p5.rotate(rotation);
 

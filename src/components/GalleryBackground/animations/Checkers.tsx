@@ -1,7 +1,7 @@
 import P5 from 'p5';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
-import { cols } from '../../../utils/colourUtils';
+import { colours } from '../../../utils/colourUtils';
 
 
 let squareSize: number;
@@ -16,7 +16,7 @@ export const Checkers = () => {
   const setup = (p5: P5, canvasParentRef: Element) => {
     setParent(canvasParentRef);
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.frameRate(60);
     p5.pixelDensity(1);
     p5.rectMode(p5.CENTER);
@@ -27,7 +27,7 @@ export const Checkers = () => {
   };
 
   const draw = (p5: P5) => {
-    p5.background(cols.dark);
+    p5.background(colours.dark);
 
     const maxSize = Math.max(p5.width, p5.height);
     squareSize = maxSize/NUM_SQUARES;
@@ -39,8 +39,8 @@ export const Checkers = () => {
 };
 
   const go = (p5: P5, first: boolean) => {
-    p5.fill(first ? cols.dark : cols.light);
-    p5.background(first ? cols.light : cols.dark);
+    p5.fill(first ? colours.dark : colours.light);
+    p5.background(first ? colours.light : colours.dark);
 
     for (let i = -1; i < NUM_SQUARES+2; i++) {
       for (let j = -1; j < NUM_SQUARES+2; j++) {

@@ -1,7 +1,7 @@
 import P5 from 'p5';
 import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
-import { cols } from '../../../utils/colourUtils';
+import { colours } from '../../../utils/colourUtils';
 
 let count = 0;
 
@@ -16,7 +16,7 @@ export const ContrastingCircles = () => {
   const setup = (p5: P5, canvasParentRef: Element) => {
     setParent(canvasParentRef);
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.frameRate(60);
     p5.pixelDensity(1);
   };
@@ -26,15 +26,15 @@ export const ContrastingCircles = () => {
   };
 
   const draw = (p5: P5) => {
-    p5.background(cols.light);
+    p5.background(colours.light);
     p5.translate(p5.width/2, p5.height/2);
     p5.strokeWeight(4);
 
     //draws black rectangle on left side of screen
-    p5.fill(cols.dark);
+    p5.fill(colours.dark);
     p5.rectMode(p5.CORNERS)
     p5.rect(0, -p5.height, -p5.width/2, p5.height);
-    p5.stroke(cols.light);
+    p5.stroke(colours.light);
 
     const minSize = Math.min(p5.width, p5.height);
 
@@ -42,7 +42,7 @@ export const ContrastingCircles = () => {
     p5.rotate(count);
     drawArcs(p5, minSize);
     p5.noStroke();
-    p5.fill(cols.light);
+    p5.fill(colours.light);
     p5.rotate(-2*count);
     drawArcs(p5, minSize/2);
 
