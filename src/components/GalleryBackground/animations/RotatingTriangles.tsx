@@ -1,5 +1,5 @@
 import p5 from 'p5';
-import { useP5DupeRemover } from '../utils/p5DupeRemover';
+import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
 import { cols } from './shared';
 

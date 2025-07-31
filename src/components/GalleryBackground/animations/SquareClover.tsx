@@ -1,6 +1,6 @@
 import p5 from 'p5';
 import Sketch from 'react-p5';
-import { useP5DupeRemover } from '../utils/p5DupeRemover';
+import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import { cols } from './shared';
 
 const SQUARE_SIZE = 100;

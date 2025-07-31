@@ -1,7 +1,7 @@
 import P5 from 'p5';
 import Sketch from 'react-p5';
 import * as dat from 'dat.gui'
-import { useP5DupeRemover } from '../utils/p5DupeRemover';
+import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import { cols, removeDatGui } from './shared';
 import { useState } from 'react';
 

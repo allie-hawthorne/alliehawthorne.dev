@@ -1,8 +1,8 @@
 import p5 from 'p5';
 import { useEffect, useState } from 'react';
-import { useP5DupeRemover } from '../utils/p5DupeRemover';
+import { useP5DupeRemover } from '../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
-import { getCurrentBreakpoints } from '../utils/breakpointUtils';
+import { getCurrentBreakpoints } from '../../utils/breakpointUtils';
 import { cols } from './shared';
 
 interface Position {
