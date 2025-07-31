@@ -18,22 +18,23 @@ export const Zen = () => {
       <div className={`flex items-center justify-around gap-8 ${primaryOpacity} ${defaultTransition}`}>
         <Button
           secondary
-          className='h-11 w-11'
+          className='h-12 w-12'
           icon={ChevronLeft}
           onClick={prevBackground}
           />
         <Button
+          className='h-20 w-20'
           icon={PauseIcon}
           onClick={leaveZenMode}
           />
         <Button
           secondary
-          className='h-11 w-11'
+          className='h-12 w-12'
           icon={ChevronRight}
           onClick={nextBackground}
         />
       </div>
-      <div className={`${secondaryOpacity} ${defaultTransition} flex items-center justify-around gap-10 mt-2`}>
+      <div className={`${secondaryOpacity} ${defaultTransition} flex items-center justify-around gap-8 md:gap-10 mt-2`}>
         <Button
           secondary
           className='h-8 w-8'

@@ -37,7 +37,7 @@ export const Button = ({icon: Icon, secondary, className, style, ...props}: Butt
       translate: isDown ? '0 1px' : '0 0',
       ...style
     }}
-    className={`${defaultTransition} h-20 w-20 rounded-full flex items-center justify-center transition-all duration-75 cursor-pointer ${className}` }
+    className={`${defaultTransition} rounded-full flex items-center justify-center transition-all duration-75 cursor-pointer ${className}` }
     onMouseDown={toggleDown}
     onMouseUp={toggleDown}
     onTouchStart={toggleDown}
