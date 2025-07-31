@@ -1,10 +1,9 @@
 import P5 from 'p5';
 import Sketch from 'react-p5';
-import * as dat from 'dat.gui';
+import { ReactDatGui } from '../../../utils/datGuiUtils';
 import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
 import { useEffect, useState } from 'react';
 import { colours } from '../../../utils/colourUtils';
-import { removeDatGui } from '../../../utils/datGuiUtils';
 
 const HUE_AMPLITUDE = 10;
 
@@ -17,10 +16,8 @@ const settings = {
 }
 
 function createDatGui() {
-  // Deals with duplicate created due to safe mode in development
-  removeDatGui();
+  const gui = new ReactDatGui();
 
-  const gui = new dat.GUI();
   gui.add(settings, 'amplitude', 10, 30);
   gui.add(settings, 'rangeX', 0, 30, 1);
   gui.add(settings, 'rangeY', 0, 12, 1);

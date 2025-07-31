@@ -1,9 +1,8 @@
 import P5 from 'p5';
-import * as dat from 'dat.gui';
+import { ReactDatGui } from '../../../utils/datGuiUtils';
 import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
 import Sketch from 'react-p5';
 import { colours } from '../../../utils/colourUtils';
-import { removeDatGui } from '../../../utils/datGuiUtils';
 import { useEffect, useState } from 'react';
 
 export const settings = {
@@ -17,10 +16,7 @@ export const settings = {
 }
 
 export function createDatGui() {
-  // Deals with duplicate created due to safe mode in development
-  removeDatGui();
-
-  const gui = new dat.GUI();
+  const gui = new ReactDatGui();
 
   gui.add(settings, 'mouseStrength', 0, 100).name('Mouse Strength');
   gui.add(settings, 'colourOffset', 0, 360).name('Colour Offset');

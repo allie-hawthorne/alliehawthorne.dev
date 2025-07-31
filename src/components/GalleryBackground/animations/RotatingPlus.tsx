@@ -1,8 +1,7 @@
 import P5 from 'p5';
 import Sketch from 'react-p5';
-import * as dat from 'dat.gui'
+import { ReactDatGui } from '../../../utils/datGuiUtils';
 import { useP5DupeRemover } from '../../../utils/p5DupeRemover';
-import { removeDatGui } from '../../../utils/datGuiUtils';
 import { colours } from '../../../utils/colourUtils';
 import { useState } from 'react';
 
@@ -16,10 +15,7 @@ const settings = {
 }
 
 function createDatGui() {
-  // Deals with duplicate created due to safe mode in development
-  removeDatGui();
-
-  const gui = new dat.GUI();
+  const gui = new ReactDatGui();
 
   gui.add(settings, 'chunkiness', 0, 10).name('Plus Chunkiness');
 }
