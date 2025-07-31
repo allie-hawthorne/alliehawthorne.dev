@@ -1,4 +1,4 @@
-import { ContentWrapper } from './ContentWrapper';
+import { ContentWrapper } from '../wrappers/ContentWrapper';
 import { NowPlaying } from '../NowPlaying';
 import { useBreakpoints } from '../../utils/breakpointUtils';
 import { data } from '../../linkData.json';

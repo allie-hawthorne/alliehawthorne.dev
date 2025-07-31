@@ -1,5 +1,5 @@
 import { PropsWithChildren, useEffect, useState } from 'react';
-import { defaultTransition } from '../App';
+import { defaultTransition } from '../../App';
 
 interface PageWrapperProps {
   display: boolean

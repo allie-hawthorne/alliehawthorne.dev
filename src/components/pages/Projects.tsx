@@ -1,5 +1,5 @@
 import projects from '../../projects.json'
-import { ContentWrapper } from './ContentWrapper';
+import { ContentWrapper } from '../wrappers/ContentWrapper';
 
 type Project = typeof projects[0];
 

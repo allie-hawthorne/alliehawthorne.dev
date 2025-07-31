@@ -1,6 +1,6 @@
 import { usePageContext } from '../PageContext';
 import { Screen } from '../utils/screen';
-import { PageWrapper } from './PageWrapper';
+import { PageWrapper } from './wrappers/PageWrapper';
 import { Checkers, CirclesAndLines, ContrastingCircles, Ellipses, GameOfLife, PerlinGrid, PlainBlack, RotatingPlus, SquareClover, TwinCircles } from '../backgrounds'
 import { RotatingTriangles } from '../backgrounds/RotatingTriangles';
 
