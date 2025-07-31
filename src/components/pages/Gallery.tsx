@@ -1,7 +1,7 @@
 import StopIcon from 'mdi-react/StopIcon';
-import ChevronRight from 'mdi-react/ChevronRightIcon';
-import ChevronLeft from 'mdi-react/ChevronLeftIcon';
-import Help from 'mdi-react/HelpIcon';
+import ChevronRightIcon from 'mdi-react/ChevronRightIcon';
+import ChevronLeftIcon from 'mdi-react/ChevronLeftIcon';
+import HelpIcon from 'mdi-react/HelpIcon';
 import FullscreenIcon from 'mdi-react/FullscreenIcon'
 import { Button } from '../Button';
 import { usePageContext } from '../../PageContext';
@@ -29,7 +29,7 @@ export const Gallery = () => {
         <Button
           secondary
           className='h-12 w-12'
-          icon={ChevronLeft}
+          icon={ChevronLeftIcon}
           onClick={prevBackground}
           />
         <Button
@@ -40,7 +40,7 @@ export const Gallery = () => {
         <Button
           secondary
           className='h-12 w-12'
-          icon={ChevronRight}
+          icon={ChevronRightIcon}
           onClick={nextBackground}
         />
       </div>
@@ -52,7 +52,7 @@ export const Gallery = () => {
         <Button
           secondary
           className='h-8 w-8'
-          icon={Help}
+          icon={HelpIcon}
           onClick={() => {}}
         />
         <Button
