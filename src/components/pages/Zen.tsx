@@ -18,7 +18,7 @@ export const Zen = () => {
       <div className={`flex items-center justify-around gap-8 ${primaryOpacity} ${defaultTransition}`}>
         <Button
           secondary
-          className='h-12 w-12'
+          className='h-11 w-11'
           icon={ChevronLeft}
           onClick={prevBackground}
           />
@@ -28,7 +28,7 @@ export const Zen = () => {
           />
         <Button
           secondary
-          className='h-12 w-12'
+          className='h-11 w-11'
           icon={ChevronRight}
           onClick={nextBackground}
         />
