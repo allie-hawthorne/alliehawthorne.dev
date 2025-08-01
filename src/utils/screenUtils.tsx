@@ -1,7 +1,4 @@
-import { About } from '../components/pages/About';
-import { Projects } from '../components/pages/Projects';
-import { Gallery } from '../components/pages/Gallery';
-import { SplashScreen } from '../components/pages/SplashScreen';
+import { About, Projects, Gallery, SplashScreen } from '../components/pages';
 
 export enum Screen {
   Splash = 'Splash',
