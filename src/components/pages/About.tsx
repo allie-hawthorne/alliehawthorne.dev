@@ -33,8 +33,8 @@ export const About = () => {
 };
 
 const SocialLinks = () => data.map(({logo, url}, index) => (
-  <NewTabLink key={index} href={url} className='flex justify-center gap-2 items-center text-white hover:opacity-80 duration-200'>
-    <img src={logo} className='invert w-8' />
+  <NewTabLink className='flex justify-center gap-2 items-center duration-200' key={index} href={url}>
+    <img className='invert w-8' src={logo} />
   </NewTabLink>
 ));
 
