@@ -2,7 +2,6 @@ import projects from '../../projects.json'
 import { ContentWrapper } from '../wrappers/ContentWrapper';
 
 type Project = typeof projects[0];
-const sharedStyles = 'md:w-[400px] rounded-xl growOnHoverItem duration-200'
 
 export const Projects = () => <ContentWrapper text='projects'>
   <div className='grid gap-20 grid-cols-1 flex-col'>
@@ -14,13 +13,7 @@ export const Projects = () => <ContentWrapper text='projects'>
 // TODO: Hard-code width of images to reduce layout shift
 const Project = ({ project }: {project: Project}) => (
   <div className='flex flex-col md:flex-row gap-x-5 gap-y-2 growOnHoverWrap'>
-    {
-      project.imgUrl.includes('webm')
-        ? <video disableRemotePlayback className={`${sharedStyles}`} autoPlay loop muted>
-          <source src={`images/previews/${project.imgUrl}`} type='video/webm' />
-        </video>
-        : <img loading="lazy" className={`${sharedStyles}`} src={`images/previews/${project.imgUrl}`} />
-    }
+    <img loading="lazy" className='md:w-[400px] rounded-xl growOnHoverItem duration-200' src={`images/previews/${project.imgUrl}`} />
     <div className='flex flex-col gap-5 justify-between'>
       <div>
         <p className='text-2xl'>{project.name}</p>
