@@ -6,14 +6,17 @@ import { useGetTrack } from './useGetTrack';
 
 
 export const NowPlaying = () => {
-  const {loading, track} = useGetTrack()
+  const {loading, track} = useGetTrack();
 
   if (loading) return (<div className='flex justify-center'>
     <ScaleLoader loading color='grey' />
   </div>)
 
-  return track && (
-    <div className='flex font-sans items-center justify-between gap-1 max-w-full min-w-full md:px-20'>
+  const listeningPrefix = track?.nowPlaying ? "I'm listening" : "I've been listening";
+
+  return track && <div className='flex flex-col gap-5 mx-5 py-5 font-sans border-pink-300 border rounded-2xl bg-black bg-opacity-10'>
+    <p className='text-center text-white opacity-75 italic'>{listeningPrefix} to:</p>
+    <div className='flex items-center justify-between gap-1 max-w-full min-w-full md:px-20'>
       <div className='flex gap-2'>
         <img src={spotify} alt='Spotify logo' width='50px' />
         <div className='max-w-[35vw]'>
@@ -31,5 +34,5 @@ export const NowPlaying = () => {
         <img src={track.image} alt='Album cover' height='90px' width='90px' className='rounded-2xl' />
       </div>
     </div>
-  )
+  </div>
 };
