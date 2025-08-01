@@ -23,8 +23,8 @@ export const About = () => {
       <div className='text-white font-sans flex flex-col gap-3'>
         <p className='text-center'>I'm Allie, a Full-Stack Software Engineer, Digital Artist, and Computer Science graduate.</p>
         <ShortHr />
-        <p>I've spent over three years working at Music-Tech startup ClicknClear - developing and maintaining their online storefront, licence verification system, admin portal and much more.</p>
-        <p>Besides this, I enjoy playing around with various technologies - from creative code using p5.js, to learning new frameworks such as Svelte, to improving my knowledge of React and more.</p>
+        <p>I've spent over three years working at Music-Tech startup ClicknClear - developing and maintaining their music licensing storefront, licence verification system, admin portal and much more.</p>
+        <p>I also enjoy playing around with various technologies - from creative coding to learning new frameworks/libraries - and more.</p>
         <p>You can see all of my open source projects, including this site itself, on my <NewTabLink href='https://github.com/allie-howe'>GitHub</NewTabLink>.</p>
       </div>
     {md && <NowPlaying />}
