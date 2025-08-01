@@ -1,17 +1,5 @@
 [
   {
-    "name": "Computational Designs",
-    "description": "Processing & p5.js experiments - minimal looping GIFs I've made throughout the years",
-    "imgUrl": "checkers.webm",
-    "isVideo": true,
-    "buttons": [
-      {
-        "title": "overwhelm your eyes",
-        "url": "projects/designs/"
-      }
-    ]
-  },
-  {
     "name": "GO Make Friends",
     "description": "React.JS & Firestore experiment - webpage to share Pokemon Go friend codes",
     "imgUrl": "pokemon-go.png",
@@ -52,17 +40,6 @@
       {
         "title": "read dissertation",
         "url": "docs/dissertation.pdf"
-      }
-    ]
-  },
-  {
-    "name": "Ellipses",
-    "description": "p5.js experiment - changing sine & cosine ratio with respect to time when translating x and y positions, to form circles, waves and more. Uses dat.gui to allow for user to play with variables.",
-    "imgUrl": "ellipses.jpg",
-    "buttons": [
-      {
-        "title": "play around",
-        "url": "projects/p5/ellipses/"
       }
     ]
   },
