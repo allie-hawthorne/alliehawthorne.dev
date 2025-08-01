@@ -15,11 +15,7 @@ export const About = () => {
   const {md} = useBreakpoints();
   return <ContentWrapper text='about'>
     <div className='flex gap-10 my-4'>
-      {data.map(({logo, url}, index) => (
-        <NewTabLink key={index} href={url} className='flex justify-center gap-2 items-center text-white hover:opacity-80 duration-200'>
-          <img src={logo} className='invert w-8' />
-        </NewTabLink>
-      ))}
+      <SocialLinks />
     </div>
     <div className='flex flex-col' style={{gap: md ? '2em' : '1em'}}>
       {!md && <NowPlaying />}
@@ -33,3 +29,9 @@ export const About = () => {
     </div>
   </ContentWrapper>;
 };
+
+const SocialLinks = () => data.map(({logo, url}, index) => (
+  <NewTabLink key={index} href={url} className='flex justify-center gap-2 items-center text-white hover:opacity-80 duration-200'>
+    <img src={logo} className='invert w-8' />
+  </NewTabLink>
+));
