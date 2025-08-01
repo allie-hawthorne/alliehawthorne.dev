@@ -3,7 +3,9 @@ import spotify from '../../assets/spotify.svg'
 import { ScaleLoader } from 'react-spinners';
 import { timeAgo } from './timeAgo';
 import { useGetTrack } from './useGetTrack';
+import { NewTabLink } from '../pages';
 
+const spotifySearchUrl = 'https://open.spotify.com/search';
 
 // TODO: not 100% satisfied with this - see commit df0101bce94283ef2f6acc70111e1c4a1ecab5e7 for redesign WIP
 export const NowPlaying = () => {
@@ -15,13 +17,15 @@ export const NowPlaying = () => {
 
   if (!track) return null;
 
-  return <div className='flex font-sans items-center justify-between gap-1 max-w-full min-w-full md:px-20'>
+  const searchTerm = `${track.name} ${track.artist}`;
+
+  return <div className='flex font-sans items-center justify-between gap-1 max-w-full min-w-full md:px-20' >
     <div className='flex gap-2'>
       <img src={spotify} alt='Spotify logo' width='50px' />
-      <div className='max-w-[35vw]'>
+      <NewTabLink className='max-w-[35vw]' href={`${spotifySearchUrl}/${searchTerm}`}>
         <p>{track.name}</p>
         <p className='text-white'>{track.artist}</p>
-      </div>
+      </NewTabLink>
     </div>
     <div className='flex items-center justify-center'>
       {track.nowPlaying
