@@ -1,5 +1,6 @@
 import projects from '../../projects.json'
 import { ContentWrapper } from '../wrappers/ContentWrapper';
+import { NewTabLink } from './About';
 
 type Project = typeof projects[0];
 
@@ -20,9 +21,9 @@ const Project = ({ project }: {project: Project}) => (
         <p className='font-sans text-white'>{project.description}</p>
       </div>
       {project.buttons.map((button, index) => (
-        <a key={index} className='text-black rounded-md text-lg bg-pink-300 hover:bg-pink-400 duration-500 p-1 block text-center' href={button.url} target='_blank' rel='noreferrer'>
+        <NewTabLink className='rounded-md text-lg bg-pink-300 hover:bg-pink-400 duration-500 p-1 block text-center' style={{color: 'black'}} key={index} href={button.url}>
           {button.title}
-        </a>
+        </NewTabLink>
       ))}
     </div>
   </div>
