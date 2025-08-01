@@ -17,7 +17,7 @@ export default function() {
   } : {};
 
   return (
-    <div style={{backgroundColor: getDarkCss(1)}} className='select-none text-pink-300 font-serif h-[100dvh] flex items-center justify-center flex-col'>
+    <div className='select-none text-pink-300 text-sm font-serif h-[100dvh] flex items-center justify-center flex-col' style={{backgroundColor: getDarkCss(1)}}>
       <GalleryBackground />
       <div style={style} className={`${defaultTransition} absolute w-full h-full flex items-center justify-center flex-col`}>
         <div className='flex items-center justify-center flex-1'>
