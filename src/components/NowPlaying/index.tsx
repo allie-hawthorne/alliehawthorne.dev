@@ -5,6 +5,7 @@ import { timeAgo } from './timeAgo';
 import { useGetTrack } from './useGetTrack';
 
 
+// TODO: not 100% satisfied with this - see commit df0101bce94283ef2f6acc70111e1c4a1ecab5e7 for redesign WIP
 export const NowPlaying = () => {
   const {loading, track} = useGetTrack()
 
