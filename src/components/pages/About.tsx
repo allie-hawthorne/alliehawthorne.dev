@@ -20,7 +20,8 @@ export const About = () => {
     <div className='flex flex-col' style={{gap: md ? '2em' : '1em'}}>
       {!md && <NowPlaying />}
       <div className='text-white font-sans flex flex-col gap-3'>
-        <p>I'm Allie, a Full Stack Software Engineer, Digital Artist, and Computer Science graduate.</p>
+        <p className='text-center'>I'm Allie, a Full-Stack Software Engineer, Digital Artist, and Computer Science graduate.</p>
+        <ShortHr />
         <p>I've spent over three years working at Music-Tech startup ClicknClear - developing and maintaining their online storefront, licence verification system, admin portal and much more.</p>
         <p>Besides this, I enjoy playing around with various technologies - from creative code using p5.js, to learning new frameworks such as Svelte, to improving my knowledge of React and more.</p>
         <p>You can see all of my open source projects, including this site itself, on my <NewTabLink href='https://github.com/allie-howe'>GitHub</NewTabLink>.</p>
@@ -35,3 +36,9 @@ const SocialLinks = () => data.map(({logo, url}, index) => (
     <img src={logo} className='invert w-8' />
   </NewTabLink>
 ));
+
+const ShortHr = () => <div className='grid grid-cols-3'>
+  <div />
+  <hr className='opacity-30' />
+  <div />
+</div>
