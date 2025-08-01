@@ -23,7 +23,7 @@ export const LinksBar = () => {
     {/* TODO: Sweeping pink boxes when tab is selected */}
     {/* TODO: Re-evaluate colors - maybe have these white, page headers pink and page content white? */}
     {Object.entries(screensMap).map(([name, thisScreen]) => (
-      <p className={`${defaultTransition} px-2 pt-0.5 pb-5 cursor-pointer`}
+      <button className={`${defaultTransition} px-2 pt-0.5 pb-5 cursor-pointer`}
         key={name}
         onClick={() => setScreen(screen !== thisScreen ? thisScreen : homeScreen)}
         style={{
@@ -32,7 +32,7 @@ export const LinksBar = () => {
         }}
       >
         {name}
-      </p>
+      </button>
     ))}
   </div>;
 }
