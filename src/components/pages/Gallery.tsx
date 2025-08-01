@@ -16,48 +16,44 @@ export const Gallery = () => {
   useEffect(() => {
     if (fullscreen) {
       setPrimaryStyles('invisible opacity-0');
+      // Secondary bar fades out after everything else, to attract user's attention to it
+      // and let them know these buttons are still present
       setTimeout(() => setSecondaryStyles('opacity-20'), 500);
-      return;
+    } else {
+      setSecondaryStyles('');
+      setPrimaryStyles('');
     }
-    setSecondaryStyles('');
-    setPrimaryStyles('');
   }, [fullscreen]);
 
   return <div className='flex justify-center relative w-full h-screen'>
     <div className='flex flex-col items-center absolute bottom-10 md:bottom-0 z-10'>
       <div className={`flex items-center justify-around gap-8 ${primaryStyles} ${defaultTransition}`}>
-        <Button
+        <Button className='h-12 w-12'
           secondary
-          className='h-12 w-12'
           icon={ChevronLeftIcon}
           onClick={prevBackground}
           />
-        <Button
-          className='h-20 w-20'
+        <Button className='h-20 w-20'
           icon={StopIcon}
           onClick={stopGallery}
           />
-        <Button
+        <Button className='h-12 w-12'
           secondary
-          className='h-12 w-12'
           icon={ChevronRightIcon}
           onClick={nextBackground}
         />
       </div>
-      <div
-        className={`${secondaryStyles} ${defaultTransition} flex items-center justify-around gap-8 md:gap-10 mt-2`}
+      <div className={`${secondaryStyles} ${defaultTransition} flex items-center justify-around gap-8 md:gap-10 mt-2`}
         onMouseEnter={() => setSecondaryStyles('')}
         onMouseLeave={() => fullscreen && setSecondaryStyles('opacity-20')}
       >
-        <Button
+        <Button className='h-8 w-8'
           secondary
-          className='h-8 w-8'
           icon={HelpIcon}
           onClick={() => {}}
         />
-        <Button
+        <Button className='h-8 w-8'
           secondary
-          className='h-8 w-8'
           icon={FullscreenIcon}
           onClick={() => setFullscreen(prev => !prev)}
         />
