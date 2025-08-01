@@ -2,12 +2,13 @@ import { ContentWrapper } from '../wrappers/ContentWrapper';
 import { NowPlaying } from '../NowPlaying';
 import { useBreakpoints } from '../../utils';
 import { data } from '../../linkData.json';
+import { defaultTransition } from '../../App';
 
 interface LinkProps extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
   children: React.ReactNode
 }
 export const NewTabLink = ({ href, className, children, ...rest }: LinkProps) => (
-  <a className={`${className} text-pink-300`} href={href} target='_blank' rel='noreferrer' {...rest}>
+  <a className={`${className} ${defaultTransition} text-pink-300 hover:opacity-60`} href={href} target='_blank' rel='noreferrer' {...rest}>
     {children}
   </a>
 );
