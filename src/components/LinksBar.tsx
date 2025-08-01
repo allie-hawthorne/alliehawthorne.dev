@@ -1,7 +1,6 @@
 import { usePageContext } from '../PageContext'
 import { defaultTransition } from '../App'
 import { getDarkCss, Screen } from '../utils'
-import { pinks } from './buttons/Button'
 
 const screensMap = {
   about: Screen.About,
@@ -20,19 +19,19 @@ export const LinksBar = () => {
       boxShadow: `0 0 100px 100px ${getDarkCss(0.9)}`,
     }}
   >
-    {/* TODO: Sweeping pink boxes when tab is selected */}
-    {/* TODO: Re-evaluate colors - maybe have these white, page headers pink and page content white? */}
-    {Object.entries(screensMap).map(([name, thisScreen]) => (
-      <button className={`${defaultTransition} px-2 pt-0.5 pb-5 cursor-pointer`}
+    {Object.entries(screensMap).map(([name, thisScreen]) => {
+      const screenActive = screen === thisScreen;
+      const textColour = screenActive ? 'text-black' : undefined
+
+      return <button className={`${defaultTransition} ${textColour} px-2 pt-0.5 pb-5 cursor-pointer overflow-hidden relative`}
         key={name}
-        onClick={() => setScreen(screen !== thisScreen ? thisScreen : homeScreen)}
-        style={{
-          backgroundColor: screen === thisScreen ? pinks[0] : undefined,
-          color: screen === thisScreen ? 'black' : undefined
-        }}
+        onClick={() => setScreen(screenActive ? homeScreen : thisScreen)}
       >
-        {name}
+        <div className={`absolute inset-0 bg-pink-300 origin-bottom ${defaultTransition} ${screenActive ? 'scale-y-100' : 'scale-y-0'}`} />
+        {/* This is dumb but just having one element with position: absolute deprives the button of its width */}
+        <p className='opacity-0' aria-hidden>{name}</p>
+        <p className='absolute inset-0'>{name}</p>
       </button>
-    ))}
+    })}
   </div>;
 }
