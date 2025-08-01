@@ -1,7 +1,7 @@
 import { About } from '../components/pages/About';
 import { Projects } from '../components/pages/Projects';
 import { Gallery } from '../components/pages/Gallery';
-import { SplashScreen } from '../components/SplashScreen';
+import { SplashScreen } from '../components/pages/SplashScreen';
 
 export enum Screen {
   Splash = 'Splash',
