@@ -24,8 +24,8 @@ export const About = () => {
     <div className='flex flex-col' style={{gap: md ? '2em' : '1em'}}>
       {!md && <NowPlaying />}
       <div className='text-white font-sans flex flex-col gap-3'>
-        <p>I'm Allie Howe, a Full-Stack Software Engineer and Computer Science BSc (First Class, Hons.) graduate from the University of Lincoln.</p>
-        <p>I've spent the last more than three years working at Music-Tech startup ClicknClear, furthering and maintaining their online storefront, Licence Verification System, and much more.</p>
+        <p>I'm Allie, a Full Stack Software Engineer, Digital Artist, and Computer Science graduate.</p>
+        <p>I've spent over three years working at Music-Tech startup ClicknClear - developing and maintaining their online storefront, licence verification system, admin portal and much more.</p>
         <p>Besides this, I enjoy playing around with various technologies - from creative code using p5.js, to learning new frameworks such as Svelte, to improving my knowledge of React and more.</p>
         <p>You can see all of my open source projects, including this site itself, on my <NewTabLink href='https://github.com/allie-howe'>GitHub</NewTabLink>.</p>
       </div>
