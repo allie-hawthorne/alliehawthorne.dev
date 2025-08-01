@@ -44,12 +44,6 @@
     ]
   },
   {
-    "name": "Where's Wally?",
-    "description": "University project - a C++ application which performs a Nearest Neighbour search on a Where's Wally scene to finally find him after all this time.",
-    "imgUrl": "wally.png",
-    "buttons": []
-  },
-  {
     "name": "PollAnywhere",
     "description": "University project - a social media-like platform centered around asking & answering polls. Mobile app created in React Native.",
     "imgUrl": "poll-anywhere.png",
