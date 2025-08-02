@@ -57,7 +57,7 @@ export const About = () => {
 
 const SocialLinks = () => data.map(({Logo, url}, index) => (
   <NewTabLink className='flex justify-center gap-2 items-center duration-200' key={index} href={url}>
-    <Logo className='w-8' />
+    <Logo className='text-white opacity-70' size='2.5rem' />
   </NewTabLink>
 ));
 
