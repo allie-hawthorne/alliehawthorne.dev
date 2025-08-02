@@ -13,7 +13,7 @@ const data = [
     Logo: GithubIcon
   },
   {
-    url: "mailto:hello@alliehowe.dev",
+    url: "mailto:howeisallie@gmail.com",
     Logo: EmailOutlineIcon
   },
   {
