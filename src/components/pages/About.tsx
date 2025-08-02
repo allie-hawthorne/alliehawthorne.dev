@@ -1,5 +1,6 @@
 import GithubIcon from 'mdi-react/GithubIcon'
 import EmailOutlineIcon from 'mdi-react/EmailOutlineIcon'
+import FileAccountIcon from 'mdi-react/FileAccountIcon'
 import LinkedinIcon from 'mdi-react/LinkedinIcon'
 import { ContentWrapper } from '../wrappers/ContentWrapper';
 import { NowPlaying } from '../NowPlaying';
@@ -14,6 +15,10 @@ const data = [
   {
     url: "mailto:hello@alliehowe.dev",
     Logo: EmailOutlineIcon
+  },
+  {
+    url: "/docs/cv_04-25.pdf",
+    Logo: FileAccountIcon
   },
   {
     url: "https://www.linkedin.com/in/allie-howe",
