@@ -2,6 +2,7 @@ import { usePageContext } from '../../PageContext';
 import { Screen } from '../../utils';
 import { PageWrapper } from '../wrappers/PageWrapper';
 import { Checkers, CirclesAndLines, ContrastingCircles, Ellipses, GameOfLife, PerlinGrid, NoGallery, RotatingPlus, RotatingTriangles, SquareClover, TwinCircles } from './animations'
+import { GrowingCircles } from './animations/GrowingCircles';
 
 // TODO: Implement lazy loading for these components? This would also help with resizing issues
 export const backgrounds = [
@@ -11,6 +12,7 @@ export const backgrounds = [
   Ellipses,
   ContrastingCircles,
   TwinCircles,
+  GrowingCircles,
   RotatingTriangles,
   RotatingPlus,
   CirclesAndLines,
