@@ -1,8 +1,26 @@
+import GithubIcon from 'mdi-react/GithubIcon'
+import EmailOutlineIcon from 'mdi-react/EmailOutlineIcon'
+import LinkedinIcon from 'mdi-react/LinkedinIcon'
 import { ContentWrapper } from '../wrappers/ContentWrapper';
 import { NowPlaying } from '../NowPlaying';
 import { useBreakpoints } from '../../utils';
-import { data } from '../../linkData.json';
 import { defaultTransition } from '../../App';
+
+const data = [
+  {
+    url: "https://www.github.com/allie-howe",
+    Logo: GithubIcon
+  },
+  {
+    url: "mailto:hello@alliehowe.dev",
+    Logo: EmailOutlineIcon
+  },
+  {
+    url: "https://www.linkedin.com/in/allie-howe",
+    Logo: LinkedinIcon
+  }
+]
+
 
 interface LinkProps extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
   children: React.ReactNode
@@ -32,9 +50,9 @@ export const About = () => {
   </ContentWrapper>;
 };
 
-const SocialLinks = () => data.map(({logo, url}, index) => (
+const SocialLinks = () => data.map(({Logo, url}, index) => (
   <NewTabLink className='flex justify-center gap-2 items-center duration-200' key={index} href={url}>
-    <img className='invert w-8' src={logo} />
+    <Logo className='w-8' />
   </NewTabLink>
 ));
 
