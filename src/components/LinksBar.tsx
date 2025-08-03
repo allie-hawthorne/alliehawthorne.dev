@@ -13,7 +13,7 @@ export const LinksBar = () => {
   const homeScreen = showGallery ? Screen.Gallery : Screen.Splash;
   const opacity = fullscreen ? 'opacity-0' : 'opacity-100';
 
-  return <div className={`${opacity} ${defaultTransition} flex justify-around w-full text-xl`}
+  return <div className={`${opacity} ${defaultTransition} flex justify-around gap-5 w-full text-xl`}
     style={{
       backgroundColor: getDarkCss(0.9),
       boxShadow: `0 0 100px 100px ${getDarkCss(0.9)}`,
