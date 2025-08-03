@@ -1,6 +1,7 @@
 import { usePageContext } from '../PageContext'
 import { defaultTransition } from '../App'
 import { getDarkCss, Screen } from '../utils'
+import { zIndices } from '../utils/zIndices';
 
 const screensMap = {
   about: Screen.About,
@@ -42,6 +43,6 @@ const ScreenLink = ({homeScreen, screenData: screenData}: ScreenLinkProps) => {
     <div className={`absolute inset-0 bg-pink-300 origin-bottom ${defaultTransition} ${isScreenActive ? 'scale-y-100' : 'scale-y-0'}`} />
     {/* This is dumb but just having one element with position: absolute deprives the button of its width */}
     <p className='opacity-0' aria-hidden>{name}</p>
-    <p className='absolute inset-0 z-20'>{name}</p>
+    <p className={`absolute inset-0 ${zIndices.pageLinkText}`}>{name}</p>
   </button>
 }

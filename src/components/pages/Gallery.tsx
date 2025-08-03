@@ -7,6 +7,7 @@ import { Button } from '../buttons/Button';
 import { usePageContext } from '../../PageContext';
 import { defaultTransition } from '../../App';
 import { useEffect, useState } from 'react';
+import { zIndices } from '../../utils/zIndices';
 
 export const Gallery = () => {
   const {stopGallery, nextBackground, prevBackground, fullscreen, setFullscreen} = usePageContext();
@@ -26,7 +27,7 @@ export const Gallery = () => {
   }, [fullscreen]);
 
   return <div className='flex justify-center relative w-full h-screen'>
-    <div className='flex flex-col items-center absolute bottom-10 md:bottom-0 z-10'>
+    <div className={`flex flex-col items-center absolute bottom-10 md:bottom-0 ${zIndices.galleryToolbar}`}>
       <div className={`flex items-center justify-around gap-8 ${primaryStyles} ${defaultTransition}`}>
         <Button className='h-12 w-12'
           secondary
