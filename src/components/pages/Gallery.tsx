@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import { zIndices } from '../../utils/zIndices';
 
 export const Gallery = () => {
-  const {stopGallery, nextBackground, prevBackground, fullscreen, setFullscreen} = usePageContext();
+  const {stopGallery, nextBackground, prevBackground, fullscreen, setFullscreen, setShowModal} = usePageContext();
 
   const [primaryStyles, setPrimaryStyles] = useState('');
   const [secondaryStyles, setSecondaryStyles] = useState('');
@@ -51,12 +51,12 @@ export const Gallery = () => {
         <Button className='h-8 w-8'
           secondary
           icon={HelpIcon}
-          onClick={() => {}}
+          onClick={() => setShowModal(p => !p)}
         />
         <Button className='h-8 w-8'
           secondary
           icon={FullscreenIcon}
-          onClick={() => setFullscreen(prev => !prev)}
+          onClick={() => setFullscreen(p => !p)}
         />
       </div>
     </div>

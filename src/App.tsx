@@ -1,3 +1,4 @@
+import { AboutModal } from './components/AboutModal';
 import { GalleryBackground } from './components/GalleryBackground';
 import { LinksBar } from './components/LinksBar';
 import { PageWrapper } from './components/wrappers/PageWrapper';
@@ -29,6 +30,7 @@ export default function() {
         </div>
         <LinksBar />
       </div>
+      <AboutModal />
     </div>
   );
 }

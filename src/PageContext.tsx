@@ -13,6 +13,8 @@ interface ContextProps {
   stopGallery: () => void
   fullscreen: boolean
   setFullscreen: Dispatch<SetStateAction<boolean>>
+  showModal: boolean
+  setShowModal: Dispatch<SetStateAction<boolean>>
 }
 const PageContext = createContext<ContextProps>({
   backgroundIndex: 0,
@@ -25,12 +27,15 @@ const PageContext = createContext<ContextProps>({
   stopGallery: () => {},
   fullscreen: false,
   setFullscreen: () => {},
+  showModal: false,
+  setShowModal: () => {},
 });
 
 export const PageProvider = ({children}: PropsWithChildren) => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const [showGallery, setShowGallery] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [screen, setScreen] = useState<Screen>(Screen.Splash);
 
   // Ensures any dat.gui instances are cleaned up when the background changes
@@ -76,7 +81,9 @@ export const PageProvider = ({children}: PropsWithChildren) => {
     setScreen,
     stopGallery,
     fullscreen,
-    setFullscreen
+    setFullscreen,
+    showModal,
+    setShowModal
   }}>
     {children}
   </PageContext.Provider>
