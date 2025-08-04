@@ -7,6 +7,7 @@ interface PageWrapperProps {
 
 const TRANSITION_TIME = 300;
 
+// TODO: Rethink this and share with other transition stuff
 export const PageWrapper = ({ children, display }: PropsWithChildren<PageWrapperProps>) => {
   const [opacity, setOpacity] = useState(1);
   const [show, setShow] = useState(false);
