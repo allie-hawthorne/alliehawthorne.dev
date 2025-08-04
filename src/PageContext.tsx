@@ -48,8 +48,10 @@ export const PageProvider = ({children}: PropsWithChildren) => {
 
     if (!existingGui) return;
 
-    fullscreen ? existingGui.classList.add(hiddenClass) : existingGui.classList.remove(hiddenClass);
-  }, [fullscreen]);
+    const hideGui = fullscreen || screen !== Screen.Gallery
+
+    hideGui ? existingGui.classList.add(hiddenClass) : existingGui.classList.remove(hiddenClass);
+  }, [fullscreen, screen]);
 
   const prevBackground = () => {
     setBackgroundIndex(prevIndex => {
