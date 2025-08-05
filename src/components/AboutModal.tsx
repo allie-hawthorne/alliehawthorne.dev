@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import galleryData from '../galleryInfo.json'
+import animations from '../animations.json'
 import { usePageContext } from '../PageContext'
 import { defaultTransition } from '../App';
 import { zIndices } from '../utils/zIndices';
@@ -18,7 +18,7 @@ export const AboutModal = () => {
   }, [showModal]);
 
   // Change this when populating info
-  const itemData = galleryData[0]
+  const itemData = animations[0]
   if (!itemData) return null;
 
   const {description, name, year} = itemData
