@@ -6,73 +6,73 @@ export const animations = [
   {
     name: "",
     year: 0,
-    description: "",
+    description: [""],
     component: NoGallery
   },
   {
     name: "perlin grid",
     year: 2025,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!",
+    description: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!"],
     component: PerlinGrid
   },
   {
     name: "checkers",
     year: 2019,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!",
+    description: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!"],
     component: Checkers
   },
   {
     name: "ellipses",
     year: 2022,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!",
+    description: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!"],
     component: Ellipses
   },
   {
     name: "contrasting circles",
     year: 2019,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!",
+    description: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!"],
     component: ContrastingCircles
   },
   {
     name: "twin circles",
     year: 2023,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!",
+    description: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!"],
     component: TwinCircles
   },
   {
     name: "growing circles",
     year: 2024,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!",
+    description: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!"],
     component: GrowingCircles
   },
   {
     name: "rotating triangles",
     year: 2019,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!",
+    description: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!"],
     component: RotatingTriangles
   },
   {
     name: "rotating pluses",
     year: 2022,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!",
+    description: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!"],
     component: RotatingPlus
   },
   {
     name: "circles and lines",
     year: 2019,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!",
+    description: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!"],
     component: CirclesAndLines
   },
   {
     name: "game of life",
     year: 2023,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!",
+    description: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!"],
     component: GameOfLife
   },
   {
     name: "square clover",
     year: 2023,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!",
+    description: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis!"],
     component: SquareClover
   }
 ]

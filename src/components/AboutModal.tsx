@@ -29,7 +29,7 @@ export const AboutModal = () => {
         <p>{name}</p>
         <p className='text-pink-300'>{year}</p>
       </div>
-      <p>{description}</p>
+      {description.map(paragraph => <p>{paragraph}</p>)}
     </div>
   </div>;
 }
