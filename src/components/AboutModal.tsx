@@ -6,7 +6,7 @@ import { zIndices } from '../utils/zIndices';
 import { getDarkCss } from '../utils';
 
 export const AboutModal = () => {
-  const {showModal, setShowModal} = usePageContext();
+  const {backgroundIndex, showModal, setShowModal} = usePageContext();
   const [styles, setStyles] = useState('invisible opacity-0');
 
   // TODO: Share all of these where possible
@@ -17,8 +17,7 @@ export const AboutModal = () => {
     );
   }, [showModal]);
 
-  // Change this when populating info
-  const itemData = animations[0]
+  const itemData = animations[backgroundIndex]
   if (!itemData) return null;
 
   const {description, name, year} = itemData
