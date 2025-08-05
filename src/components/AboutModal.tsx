@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import animations from '../animations.json'
+import { animations } from '../animations'
 import { usePageContext } from '../PageContext'
 import { defaultTransition } from '../App';
 import { zIndices } from '../utils/zIndices';
