@@ -26,7 +26,7 @@ export const AboutModal = () => {
   return <div className={`${defaultTransition} ${styles} ${zIndices.aboutModal} absolute inset-0 flex justify-center items-end p-16`} onClick={() => setShowModal(false)}>
     <div className='flex flex-col gap-2 justify-center rounded-lg w-64 p-2 aspect-video text-white font-sans' style={{backgroundColor: getDarkCss(), boxShadow: `0 0 20px #FFF6`}}>
       <div>
-        <p>{name}</p>
+        <p className='italic'>{name}</p>
         <p className='text-pink-300'>{year}</p>
       </div>
       {description.map(paragraph => <p>{paragraph}</p>)}
