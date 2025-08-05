@@ -14,7 +14,7 @@ export const animations = [
     year: 2025,
     description: [
       "I've experimented with Perlin noise a couple times, but this is the first time I've made something I loved.",
-      "You're travelling through three dimensions of Perlin noise, displaying values as squares of varying size and hue depending on the value.",
+      "We're travelling through three dimensions of Perlin noise, visualising values as squares of varying size and hue depending on the value.",
       "I also added GUI controls to let you mess around with various settings - have a play around!"
     ],
     component: PerlinGrid
