@@ -23,7 +23,7 @@ export const AboutModal = () => {
   const {description, name, year} = itemData
 
   // TODO: Try out using <dialog> here (I couldn't get transition/background to work nicely)
-  return <div className={`${defaultTransition} ${styles} ${zIndices.aboutModal} absolute inset-0 flex justify-center items-end p-16`} onClick={() => setShowModal(false)}>
+  return <div className={`${defaultTransition} ${styles} ${zIndices.aboutModal} absolute inset-0 flex justify-center items-end pb-[6.5rem] md:pb-16 px-4`} onClick={() => setShowModal(false)}>
     <div className='flex flex-col gap-2 justify-center rounded-lg max-w-lg p-4 text-white font-sans' style={{backgroundColor: getDarkCss(), boxShadow: `0 0 20px #FFF6`}}>
       <div>
         <p className='italic'>{name}</p>
