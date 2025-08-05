@@ -29,7 +29,7 @@ export const AboutModal = () => {
         <p className='italic'>{name}</p>
         <p className='text-pink-300'>{year}</p>
       </div>
-      {description.map(paragraph => <p>{paragraph}</p>)}
+      {description.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
     </div>
   </div>;
 }
