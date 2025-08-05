@@ -1,5 +1,5 @@
 import { Dispatch, PropsWithChildren, SetStateAction, createContext, useContext, useEffect, useState } from 'react';
-import { backgrounds } from './components/GalleryBackground';
+import { animations } from './animations';
 import { removeDatGui, Screen } from './utils';
 
 interface ContextProps {
@@ -22,7 +22,7 @@ const PageContext = createContext<ContextProps>({
   prevBackground: () => {},
   showGallery: false,
   setShowGallery: () => {},
-  screen: Screen.Splash,
+  screen: Screen?.Splash,
   setScreen: () => {},
   stopGallery: () => {},
   fullscreen: false,
@@ -56,14 +56,14 @@ export const PageProvider = ({children}: PropsWithChildren) => {
   const prevBackground = () => {
     setBackgroundIndex(prevIndex => {
       const newIndex = prevIndex - 1;
-      return newIndex < 1 ? backgrounds.length - 1 : newIndex;
+      return newIndex < 1 ? animations.length - 1 : newIndex;
     });
   };
 
   const nextBackground = () => {
     setBackgroundIndex(prevIndex => {
       const newIndex = prevIndex + 1;
-      return newIndex >= backgrounds.length ? 1 : newIndex;
+      return newIndex >= animations.length ? 1 : newIndex;
     });
   };
 
