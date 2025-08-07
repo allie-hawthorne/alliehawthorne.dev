@@ -1,6 +1,7 @@
 [
   {
     "name": "GO Make Friends",
+    "year": 2020,
     "description": "React.JS & Firestore experiment - webpage to share Pokemon Go friend codes",
     "imgUrl": "pokemon-go.png",
     "buttons": [
@@ -12,6 +13,7 @@
   },
   {
     "name": "LIDAR Scanner",
+    "year": 2025,
     "description": "Three.js unfinished experiment/proof-of-concept - a 3D world in which you can move around and scan objects. Inspired by Scanner Sombre, this is my first foray into 3D rendering for the web.",
     "imgUrl": "lidar.png",
     "buttons": [
@@ -23,6 +25,7 @@
   },
   {
     "name": "Old site",
+    "year": 2020,
     "description": "Archive of original site, made in HTML, SCSS and JavaScript from 2020-2022. I've since migrated to a more mobile first approach using React/Tailwind but this was the first full-fledged site I made and I'm still proud of it!",
     "imgUrl": "site2.png",
     "buttons": [
@@ -34,6 +37,7 @@
   },
   {
     "name": "ArcCheck Archiving System",
+    "year": 2021,
     "description": "University project - Site proposed for Lincoln County Hospital to automate the archiving of key data from ArcCheck Radiotherapy scans",
     "imgUrl": "arccheck.png",
     "buttons": [
@@ -45,6 +49,7 @@
   },
   {
     "name": "PollAnywhere",
+    "year": 2021,
     "description": "University project - a social media-like platform centered around asking & answering polls. Mobile app created in React Native.",
     "imgUrl": "poll-anywhere.png",
     "buttons": [
@@ -56,6 +61,7 @@
   },
   {
     "name": "Machine Learning",
+    "year": 2019,
     "description": "University projects - Implementing K-means clustering in Python, and creating Artificial Neural Network and Random Forest classification models",
     "imgUrl": "ml2crop.png",
     "buttons": [
@@ -71,6 +77,7 @@
   },
   {
     "name": "Today's Vibe",
+    "year": 2020,
     "description": "Twitter API experiment - a custom bot which tweets a random nonsensical \"vibe\" every day at noon.",
     "imgUrl": "vibe-bot.png",
     "buttons": [
@@ -82,6 +89,7 @@
   },
   {
     "name": "Password Tester",
+    "year": 2020,
     "description": "React.JS experiment - a component which checks and scores passwords based on their security, and gives the user feedback on how to improve their passwords.",
     "imgUrl": "pass-tester.png",
     "buttons": [
