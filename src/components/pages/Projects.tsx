@@ -1,4 +1,5 @@
 import projects from '../../projects.json'
+import { ItemInfo } from '../ItemInfo';
 import { ContentWrapper } from '../wrappers/ContentWrapper';
 import { NewTabLink } from './About';
 
@@ -16,9 +17,8 @@ const Project = ({ project }: {project: Project}) => (
   <div className='flex flex-col md:flex-row gap-x-5 gap-y-2 growOnHoverWrap'>
     <img loading="lazy" className='md:w-[400px] rounded-xl growOnHoverItem duration-200' src={`images/previews/${project.imgUrl}`} />
     <div className='flex flex-col gap-5 justify-between'>
-      <div>
-        <p className='text-2xl'>{project.name}</p>
-        <p className='font-sans text-white'>{project.description}</p>
+      <div className='w-full'>
+        <ItemInfo {...project} />
       </div>
       {project.buttons.map((button, index) => (
         <NewTabLink className='rounded-md text-lg bg-pink-300 hover:bg-pink-400 duration-500 p-1 block text-center' style={{color: 'black'}} key={index} href={button.url}>
