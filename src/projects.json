@@ -1,19 +1,5 @@
 [
   {
-    "name": "GO Make Friends",
-    "year": 2020,
-    "description": [
-      "React.JS & Firestore experiment - webpage to share Pokemon Go friend codes"
-    ],
-    "imgUrl": "pokemon-go.png",
-    "buttons": [
-      {
-        "title": "visit",
-        "url": "projects/react/pokemon-go/"
-      }
-    ]
-  },
-  {
     "name": "LIDAR Scanner",
     "year": 2025,
     "description": [
@@ -42,6 +28,20 @@
       {
         "title": "make your mark",
         "url": "projects/world-of-gifs/"
+      }
+    ]
+  },
+  {
+    "name": "GO Make Friends",
+    "year": 2020,
+    "description": [
+      "React.JS & Firestore experiment - webpage to share Pokemon Go friend codes"
+    ],
+    "imgUrl": "pokemon-go.png",
+    "buttons": [
+      {
+        "title": "visit",
+        "url": "projects/react/pokemon-go/"
       }
     ]
   },
