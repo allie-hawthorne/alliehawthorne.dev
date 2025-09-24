@@ -1,17 +1,13 @@
 import p5 from 'p5';
-import { useState } from 'react';
-import { useP5DupeRemover } from '../utils/p5DupeRemover';
 import Sketch from 'react-p5';
+import { useState } from 'react';
+import { colours, useP5DupeRemover } from '../../../utils';
 import { usePrevious } from '@uidotdev/usehooks';
 
 const TILE_SIZE = 10;
+const FRAME_RATE = 25;
 
 const EMPTY_PERCENTAGE = 0.8;
-
-const cols = {
-  dark: 30,
-  light: 150,
-}
 
 export const GameOfLife = () => {
   const setParent = useP5DupeRemover();
@@ -32,7 +28,7 @@ export const GameOfLife = () => {
   const drawGrid = (p5: p5) => {
     for (let i = 0; i < gridLength; i++) {
       for (let j = 0; j < gridHeight; j++) {
-        p5.fill(gameState[j][i] ? cols.light : cols.dark);
+        p5.fill(gameState[j][i] ? colours.light : colours.dark);
         p5.square(i*TILE_SIZE, j*TILE_SIZE, TILE_SIZE);
       }
     }
@@ -70,7 +66,7 @@ export const GameOfLife = () => {
     setParent(canvasParentRef);
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     p5.background(0);
-    p5.frameRate(30);
+    p5.frameRate(FRAME_RATE);
     p5.noStroke();
     p5.pixelDensity(1);
   };
@@ -80,13 +76,11 @@ export const GameOfLife = () => {
   };
 
   const draw = (p5: p5) => {
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     drawGrid(p5);
     const isSame = checkPrevious();
     setGameState(isSame ? randomiseGrid() : updateGameState());
   }
 
-  return <div className='blur-sm'>
-    <Sketch setup={setup} draw={draw} windowResized={windowResized}/>
-  </div>;
+  return <Sketch setup={setup} draw={draw} windowResized={windowResized}/>;
 };

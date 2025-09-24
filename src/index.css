@@ -5,6 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  touch-action: none;
+  background-color: rgb(30, 30, 30);
+}
+
 .pastel-rainbow {
   background:
     linear-gradient(50deg,

@@ -1,38 +1,26 @@
-import { useState } from 'react';
-import { CustomBackground } from './components/CustomBackground';
-import { SplashScreen } from './components/SplashScreen';
+import { AboutModal } from './components/AboutModal';
+import { GalleryBackground } from './components/GalleryBackground';
 import { LinksBar } from './components/LinksBar';
-import { PageWrapper } from './components/PageWrapper';
-import { About } from './components/pages/About';
-import { Projects } from './components/pages/Projects';
-import { Contact } from './components/pages/Contact';
-import { FloatingIcons } from './components/FloatingIcons';
-import { useBackgroundContext } from './backgrounds/BackgroundContext';
+import { PageWrapper } from './components/wrappers/PageWrapper';
+import { usePageContext } from './PageContext';
+import { getDarkCss, Screen, screensComponentMap } from './utils';
 
 export const defaultTransition = 'transition-all duration-500';
 
-export enum Screen {
-  Splash = 'Splash',
-  About = 'About',
-  Projects = 'Projects',
-  Contact = 'Contact',
-}
-
-const screensComponentMap = {
-  [Screen.Splash]: <SplashScreen />,
-  [Screen.About]: <About />,
-  [Screen.Projects]: <Projects />,
-  [Screen.Contact]: <Contact />,
-}
-
 export default function() {
-  const [screen, setScreen] = useState<Screen>(Screen.Splash);
-  const {zenMode} = useBackgroundContext()
+  const {screen, showGallery} = usePageContext()
+
+  const galleryInBackground = showGallery && screen !== Screen.Gallery
+
+  const style = galleryInBackground ? {
+    backgroundColor: getDarkCss(0.8),
+    zIndex: 1,
+  } : {};
 
   return (
-    <div className='select-none bg-black text-pink-300 font-serif h-[100dvh] flex items-center justify-center flex-col'>
-      <CustomBackground />
-      {!zenMode && <div className='absolute bg-opacity-10 bg-black w-full h-full flex items-center justify-center flex-col'>
+    <div className='select-none text-pink-300 text-sm font-serif h-[100dvh] flex items-center justify-center flex-col' style={{backgroundColor: getDarkCss(1)}}>
+      <GalleryBackground />
+      <div style={style} className={`${defaultTransition} absolute w-full h-full flex items-center justify-center flex-col`}>
         <div className='flex items-center justify-center flex-1'>
           {Object.entries(screensComponentMap).map(([screenName, component]) => (
             <PageWrapper key={screenName} display={screen === screenName as Screen}>
@@ -40,9 +28,9 @@ export default function() {
             </PageWrapper>
           ))}
         </div>
-        <LinksBar screen={screen} setScreen={setScreen} />
-      </div>}
-        <FloatingIcons />
+        <LinksBar />
+      </div>
+      <AboutModal />
     </div>
   );
 }

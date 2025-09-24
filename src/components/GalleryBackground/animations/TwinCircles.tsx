@@ -1,9 +1,7 @@
 import p5 from 'p5';
-import { useEffect, useState } from 'react';
-import { useP5DupeRemover } from '../utils/p5DupeRemover';
+import { useEffect } from 'react';
 import Sketch from 'react-p5';
-import { getCurrentBreakpoints } from '../utils/breakpointUtils';
-import { cols } from './shared';
+import { colours, getCurrentBreakpoints, useP5DupeRemover } from '../../../utils';
 
 interface Position {
   x: number;
@@ -11,7 +9,7 @@ interface Position {
 }
 let positions: Position[][] = [];
 const MAX_POS = 50;
-const BASE_SPEED = 0.2e-3;
+const BASE_SPEED = 0.4e-2;
 
 export const TwinCircles = () => {
   const setParent = useP5DupeRemover();
@@ -24,7 +22,7 @@ export const TwinCircles = () => {
   const setup = (p5: p5, canvasParentRef: Element) => {
     setParent(canvasParentRef);
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.frameRate(60);
     p5.noStroke();
     p5.pixelDensity(1);
@@ -35,7 +33,7 @@ export const TwinCircles = () => {
   };
 
   const draw = (p5: p5) => {
-    p5.background(cols.dark);
+    p5.background(colours.dark);
     p5.translate(p5.windowWidth/2, p5.windowHeight/2);
 
     const normalisers = {
@@ -44,7 +42,7 @@ export const TwinCircles = () => {
       speed: md ? BASE_SPEED : BASE_SPEED * 2,
     }
 
-    const theta = p5.millis()*normalisers.speed;
+    const theta = p5.frameCount*normalisers.speed;
     positions.push([
       {x: p5.sin(2*theta)*normalisers.width, y: p5.cos(theta)*normalisers.height},
       {x: -p5.sin(2*theta)*normalisers.width, y: -p5.cos(theta)*normalisers.height},
@@ -55,7 +53,7 @@ export const TwinCircles = () => {
     }
 
     positions.forEach((mp, i) => {
-      p5.fill(cols.light, p5.map(i, 0, MAX_POS, 0, 200));
+      p5.fill(colours.light, p5.map(i, 0, MAX_POS, 0, 200));
 
       mp.forEach((_, index) => (
         p5.ellipse(positions[i][index].x, positions[i][index].y, i, i)
