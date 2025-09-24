@@ -28,6 +28,23 @@
     ]
   },
   {
+    "name": "World of GIFs",
+    "description": [
+      "Full-stack project - a draggable canvas that allows every user to post one GIF per day, using Tenor's API to ensure content is moderated. Backend is self-hosted on a Raspberry Pi, using Express.js for REST API, MySQL to store data, and Serveo to protect local network IP and get around CGNAT"
+    ],
+    "disclaimer": {
+      "text": "Connection may be unstable due to self-hosting",
+      "type": "warning"
+    },
+    "imgUrl": "world-of-gifs.png",
+    "buttons": [
+      {
+        "title": "make your mark",
+        "url": "projects/world-of-gifs/"
+      }
+    ]
+  },
+  {
     "name": "Old site",
     "year": 2020,
     "description": [
