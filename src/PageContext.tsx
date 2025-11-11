@@ -1,4 +1,5 @@
 import { Dispatch, PropsWithChildren, SetStateAction, createContext, useContext, useEffect, useState } from 'react';
+import { parseAsInteger, useQueryState } from 'nuqs'
 import { animations } from './animations';
 import { removeDatGui, Screen } from './utils';
 
@@ -32,11 +33,11 @@ const PageContext = createContext<ContextProps>({
 });
 
 export const PageProvider = ({children}: PropsWithChildren) => {
-  const [backgroundIndex, setBackgroundIndex] = useState(0);
+  const [backgroundIndex, setBackgroundIndex] = useQueryState('background', parseAsInteger);
   const [showGallery, setShowGallery] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [screen, setScreen] = useState<Screen>(Screen.Splash);
+  const [screen, setScreen] = useState<Screen>(backgroundIndex ? Screen.Gallery : Screen.Splash);
 
   // Ensures any dat.gui instances are cleaned up when the background changes
   useEffect(removeDatGui, [backgroundIndex]);
