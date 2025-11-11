@@ -33,7 +33,7 @@ const PageContext = createContext<ContextProps>({
 });
 
 export const PageProvider = ({children}: PropsWithChildren) => {
-  const [backgroundIndex, setBackgroundIndex] = useQueryState('background', parseAsInteger);
+  const [backgroundIndex, setBackgroundIndex] = useQueryState('bg', parseAsInteger);
   const [showGallery, setShowGallery] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [showModal, setShowModal] = useState(false);
