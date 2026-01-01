@@ -17,7 +17,7 @@ const data = [
     Logo: EmailOutlineIcon
   },
   {
-    url: "/docs/CV-Sept-2025.pdf",
+    url: "/docs/cv-jan-2025.pdf",
     Logo: FileAccountIcon
   },
   {
