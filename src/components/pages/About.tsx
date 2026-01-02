@@ -9,11 +9,11 @@ import { defaultTransition } from '../../App';
 
 const data = [
   {
-    url: "https://www.github.com/allie-howe",
+    url: "https://www.github.com/allie-hawthorne",
     Logo: GithubIcon
   },
   {
-    url: "mailto:howeisallie@gmail.com",
+    url: "mailto:hello@alliehawthorne.dev",
     Logo: EmailOutlineIcon
   },
   {
@@ -21,7 +21,7 @@ const data = [
     Logo: FileAccountIcon
   },
   {
-    url: "https://www.linkedin.com/in/allie-howe",
+    url: "https://www.linkedin.com/in/allie-hawthorne",
     Logo: LinkedinIcon
   }
 ]
@@ -48,7 +48,7 @@ export const About = () => {
         <ShortHr />
         <p>I've spent over three years working at Music-Tech startup ClicknClear - developing and maintaining their music licensing storefront, licence verification system, admin portal and much more.</p>
         <p>I also enjoy playing around with various technologies - from creative coding to learning new frameworks/libraries - and more.</p>
-        <p>You can see all of my open source projects, including this site itself, on my <NewTabLink href='https://github.com/allie-howe'>GitHub</NewTabLink>.</p>
+        <p>You can see all of my open source projects, including this site itself, on my <NewTabLink href='https://github.com/allie-hawthorne'>GitHub</NewTabLink>.</p>
       </div>
     {md && <NowPlaying />}
     </div>
