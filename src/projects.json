@@ -1,5 +1,19 @@
 [
   {
+    "name": "Can I Recycle?",
+    "year": 2026,
+    "description": [
+      "Generative AI experiment - a web app that uses the user's postcode and a description of an item, and queries Google Gemini to determine if the item is recyclable in their area. Aims to make recycling more accessible and reduce waste contamination."
+    ],
+    "imgUrl": "can-i-recycle.png",
+    "buttons": [
+      {
+        "title": "visit",
+        "url": "projects/can-i-recycle/"
+      }
+    ]
+  },
+  {
     "name": "LIDAR Scanner",
     "year": 2025,
     "description": [
