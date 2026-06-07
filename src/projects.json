@@ -5,6 +5,7 @@
     "description": [
       "Generative AI experiment - a web app that uses the user's postcode and a description of an item, and queries Google Gemini to determine if the item is recyclable in their area. Aims to make recycling more accessible and reduce waste contamination."
     ],
+    "tags": ["React.JS", "Express", "TypeScript", "Full-Stack", "Self-Hosted"],
     "imgUrl": "can-i-recycle.png",
     "buttons": [
       {
@@ -19,6 +20,7 @@
     "description": [
       "Three.js unfinished experiment/proof-of-concept - a 3D world in which you can move around and scan objects. Inspired by Scanner Sombre, this is my first foray into 3D rendering for the web."
     ],
+    "tags": ["React.JS", "Three.JS", "TypeScript", "Frontend", "Interactive"],
     "imgUrl": "lidar.png",
     "buttons": [
       {
@@ -37,6 +39,7 @@
       "text": "Connection may be unstable due to self-hosting",
       "type": "warning"
     },
+    "tags": ["React.JS", "Express", "MySQL", "TypeScript", "Full-Stack", "Self-Hosted"],
     "imgUrl": "world-of-gifs.png",
     "buttons": [
       {
@@ -51,6 +54,7 @@
     "description": [
       "React.JS & Firestore experiment - webpage to share Pokemon Go friend codes"
     ],
+    "tags": ["React.JS", "Firestore", "JavaScript", "Full-Stack"],
     "imgUrl": "pokemon-go.png",
     "buttons": [
       {
@@ -65,6 +69,7 @@
     "description": [
       "Archive of original site, made in HTML, SCSS and JavaScript from 2020-2022. I've since migrated to a more mobile first approach using React/Tailwind but this was the first full-fledged site I made and I'm still proud of it!"
     ],
+    "tags": ["UI Design", "HTML", "SCSS", "JavaScript", "Frontend"],
     "imgUrl": "site2.png",
     "buttons": [
       {
@@ -79,6 +84,7 @@
     "description": [
       "University project - Site proposed for Lincoln County Hospital to automate the archiving of key data from ArcCheck Radiotherapy scans"
     ],
+    "tags": ["ASP.NET", "C#", "Full-Stack", "University"],
     "imgUrl": "arccheck.png",
     "buttons": [
       {
@@ -93,6 +99,7 @@
     "description": [
       "University project - a social media-like platform centered around asking & answering polls. Mobile app created in React Native."
     ],
+    "tags": ["React Native", "JavaScript", "Frontend", "University"],
     "imgUrl": "poll-anywhere.png",
     "buttons": [
       {
@@ -107,6 +114,7 @@
     "description": [
       "University projects - Implementing K-means clustering in Python, and creating Artificial Neural Network and Random Forest classification models"
     ],
+    "tags": ["Machine Learning", "Python", "University"],
     "imgUrl": "ml2crop.png",
     "buttons": [
       {
@@ -125,6 +133,7 @@
     "description": [
       "Twitter API experiment - a custom bot which tweets a random nonsensical \"vibe\" every day at noon."
     ],
+    "tags": ["API Integration", "JavaScript", "Backend"],
     "imgUrl": "vibe-bot.png",
     "buttons": [
       {
@@ -139,6 +148,7 @@
     "description": [
       "React.JS experiment - a component which checks and scores passwords based on their security, and gives the user feedback on how to improve their passwords."
     ],
+    "tags": ["React.JS", "JavaScript", "Frontend"],
     "imgUrl": "pass-tester.png",
     "buttons": [
       {
