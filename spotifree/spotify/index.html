@@ -9,7 +9,7 @@
     const code = new URLSearchParams(window.location.search).get("code");
 
     const clientId = localStorage.getItem("spotifyClientId");
-    const redirectUrl = localStorage.getItem("spotifyRedirectUri");
+    const redirectUrl = localStorage.getItem("redirectUri");
 
     verifyAndExchangeCode(code).then(token => {
       set("spotify-sdk:AuthorizationCodeWithPKCEStrategy:token", token, token.expires_in * 1000);
